@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://druykccncta5j"]
+
+[ext_resource type="PackedScene" uid="uid://dgmpbgpp7k0mk" path="res://assets/head-placeholder-kauhee-ruma.glb" id="1_0f027"]
+
+[node name="main_scene" type="Node3D" unique_id=1813507543]
+
+[node name="head-placeholder-kauhee-ruma" parent="." unique_id=2145332449 instance=ExtResource("1_0f027")]
+
+[node name="camera_main" type="Camera3D" parent="." unique_id=1321372497]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.7882595, -12.4546995)
