@@ -73,4 +73,5 @@ func _physics_process(delta) -> void:
 		linear_velocity.x = max_x_speed
 	if linear_velocity.x < -max_x_speed:
 		linear_velocity.x = -max_x_speed
+	propellit.set_speeds(abs(linear_velocity.y) + abs(linear_velocity.x) + 2)
 	infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nInput up: %.1f" % [global_position.y, auto_float_target_altitude, linear_velocity.y, up_force_input]
