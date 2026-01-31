@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="giants-gala-godot"
+run/main_scene="uid://p1nxh78kdjbh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [physics]
 
