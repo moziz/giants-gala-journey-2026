@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://ikwv2wcvx36j"]
+
+[ext_resource type="Script" uid="uid://snp71kcv6jea" path="res://tomi/scripts/helikopterimme.gd" id="1_4rtj8"]
+[ext_resource type="Texture2D" uid="uid://chiuj3f0ktsck" path="res://tomi/textures/kopteri_gpt.png" id="2_21mtg"]
+[ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="2_nw0r3"]
+[ext_resource type="Texture2D" uid="uid://conlh1aep1roo" path="res://tomi/textures/ground_gpt.png" id="3_21mtg"]
+[ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="3_j7suf"]
+[ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="3_t6ig8"]
+[ext_resource type="Script" uid="uid://cam0p05e75uoo" path="res://tomi/scripts/kolikamera.gd" id="7_j7suf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6ig8"]
+albedo_texture = ExtResource("2_21mtg")
+uv1_scale = Vector3(2.185, 1.415, 2.28)
+uv1_offset = Vector3(0.14, 0.16, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gygsw"]
+material = SubResource("StandardMaterial3D_t6ig8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4m8"]
+albedo_texture = ExtResource("3_t6ig8")
+emission_enabled = true
+emission = Color(0.7294118, 0.7647059, 0.14509805, 1)
+emission_energy_multiplier = 0.4
+uv1_scale = Vector3(2.425, 5.73, 2.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6ig8"]
+material = SubResource("StandardMaterial3D_7l4m8")
+size = Vector3(0.255, 0.1, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6ig8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3rjik"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t5rug"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7suf"]
+albedo_texture = ExtResource("3_21mtg")
+uv1_scale = Vector3(10, 10, 10)
+
+[node name="KolihepteriSceene" type="Node3D" unique_id=571967542]
+
+[node name="Helikopterimme" type="RigidBody3D" parent="." unique_id=1420725809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.527261, 0)
+mass = 100.0
+gravity_scale = 0.2
+script = ExtResource("1_4rtj8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Helikopterimme" unique_id=782840388]
+mesh = SubResource("BoxMesh_gygsw")
+
+[node name="Propellit" type="Node3D" parent="Helikopterimme" unique_id=989316934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5314925, 0)
+script = ExtResource("3_j7suf")
+
+[node name="Propelli1" type="MeshInstance3D" parent="Helikopterimme/Propellit" unique_id=620213589]
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("2_nw0r3")
+rotation_speed = -2.137
+
+[node name="Propelli2" type="MeshInstance3D" parent="Helikopterimme/Propellit" unique_id=181426572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005191326, 0)
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("2_nw0r3")
+rotation_speed = 2.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Helikopterimme" unique_id=990108112]
+shape = SubResource("BoxShape3D_t6ig8")
+
+[node name="infotext" type="Label3D" parent="Helikopterimme" unique_id=1497474991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0)
+text = "Altitude: 10
+Altitude target: "
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="Maa" type="Node3D" parent="." unique_id=260443174]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Maa" unique_id=1522416207]
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maa/RigidBody3D" unique_id=1164331621]
+shape = SubResource("BoxShape3D_3rjik")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Maa" unique_id=1721022504]
+mesh = SubResource("BoxMesh_t5rug")
+surface_material_override/0 = SubResource("StandardMaterial3D_j7suf")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1634293039]
+transform = Transform3D(1, 0, 0, 0, 0.958472, 0.28518656, 0, -0.28518656, 0.958472, 0, 3.894912, 2.219965)
+fov = 90.0
+script = ExtResource("7_j7suf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=726162660]
+transform = Transform3D(0.8792374, -0.4606782, -0.12131433, 0.21443182, 0.15531832, 0.9643108, -0.42539462, -0.8738716, 0.23534566, 0, 12.77284, 0)
+shadow_enabled = true
