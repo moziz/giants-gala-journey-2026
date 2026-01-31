@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://diru48yu1e4a3"]
+
+[ext_resource type="Script" uid="uid://cubeh3m8dergj" path="res://decoree.gd" id="1_ele75"]
+[ext_resource type="PackedScene" uid="uid://dgmpbgpp7k0mk" path="res://assets/head-placeholder-kauhee-ruma.glb" id="2_0bf1i"]
+[ext_resource type="Texture2D" uid="uid://bwwga13y6j1x6" path="res://assets/huulet.png" id="2_5er0a"]
+
+[node name="decoree" type="Node3D" unique_id=483027316]
+script = ExtResource("1_ele75")
+decaltex = ExtResource("2_5er0a")
+
+[node name="head-placeholder-kauhee-ruma" parent="." unique_id=487244909 instance=ExtResource("2_0bf1i")]
+
+[node name="paint_ray" type="RayCast3D" parent="." unique_id=1219519899]
+debug_shape_custom_color = Color(0.95352215, 1.6364455e-06, 0.545687, 1)
+
+[node name="Decal" type="Decal" parent="." unique_id=825100848]
+transform = Transform3D(-0.99610925, 0.03447734, -0.08110407, 0.07747871, -0.095939726, -0.9923673, -0.041995272, -0.99478996, 0.09289515, -0.18196389, -0.4144744, -1.121633)
+size = Vector3(0.5, 0.5, 0.5)
+texture_albedo = ExtResource("2_5er0a")
+
+[node name="Decal2" type="Decal" parent="." unique_id=220370536]
+transform = Transform3D(-0.9948654, -0.09858729, -0.022875637, 0.034449562, -0.11734582, -0.9924935, 0.09516287, -0.9881855, 0.12013958, 0.36796704, 0.6466111, -0.98354113)
+size = Vector3(0.5, 0.5, 0.5)
+texture_albedo = ExtResource("2_5er0a")

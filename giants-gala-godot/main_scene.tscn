@@ -1,10 +1,22 @@
 [gd_scene format=3 uid="uid://druykccncta5j"]
 
-[ext_resource type="PackedScene" uid="uid://dgmpbgpp7k0mk" path="res://assets/head-placeholder-kauhee-ruma.glb" id="1_0f027"]
+[ext_resource type="PackedScene" uid="uid://diru48yu1e4a3" path="res://decoree.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://4rx5la4a3wj7" path="res://decoree_tester.gd" id="2_2c62f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2c62f"]
+height = 1.0
+radial_segments = 8
 
 [node name="main_scene" type="Node3D" unique_id=1813507543]
 
-[node name="head-placeholder-kauhee-ruma" parent="." unique_id=2145332449 instance=ExtResource("1_0f027")]
-
 [node name="camera_main" type="Camera3D" parent="." unique_id=1321372497]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.7882595, -12.4546995)
+
+[node name="decoree" parent="." unique_id=483027316 instance=ExtResource("1_0f027")]
+
+[node name="decoree_tester" type="Node3D" parent="." unique_id=1062044034 node_paths=PackedStringArray("decoree")]
+script = ExtResource("2_2c62f")
+decoree = NodePath("../decoree")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="decoree_tester" unique_id=754210626]
+mesh = SubResource("CylinderMesh_2c62f")
