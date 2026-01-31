@@ -11,9 +11,11 @@ var auto_float_force: float = 0
 
 var upward_power: float = 100_000.0
 var sideward_power: float = 100_000.0
+var forward_power: float = 100_000.0
 
 var max_y_speed: float = 10.0
 var max_x_speed: float = 10.0
+var max_z_speed: float = 10.0
 
 
 func _physics_process(delta) -> void:
@@ -32,6 +34,8 @@ func _physics_process(delta) -> void:
 	else:
 		auto_float = false
 		apply_force(Vector3.UP * upward_power * delta * up_force_input)
+		
+	
 	var side_force_input = 0
 	if Input.is_action_pressed("p1_thrust_right"):
 		side_force_input = 1
@@ -40,6 +44,15 @@ func _physics_process(delta) -> void:
 		
 	if side_force_input != 0:
 		apply_force(Vector3.RIGHT * sideward_power * delta * side_force_input)
+		
+	var forward_force_input = 0
+	if Input.is_action_pressed("p1_thrust_forward"):
+		forward_force_input = 1
+	if Input.is_action_pressed("p1_thurst_backward"):
+		forward_force_input = -1
+		
+	if forward_force_input != 0:
+		apply_force(Vector3.FORWARD * forward_power * delta * forward_force_input)
 	
 	
 	
@@ -64,14 +77,9 @@ func _physics_process(delta) -> void:
 		apply_force(Vector3.UP * auto_float_force * multi)
 		auto_float_force *= 0.9
 	# clamp up speed
-	if linear_velocity.y > max_y_speed:
-		linear_velocity.y = max_y_speed
-	if linear_velocity.y < -max_y_speed:
-		linear_velocity.y = -max_y_speed
-	# clamp side speed
-	if linear_velocity.x > max_x_speed:
-		linear_velocity.x = max_x_speed
-	if linear_velocity.x < -max_x_speed:
-		linear_velocity.x = -max_x_speed
-	propellit.set_speeds(abs(linear_velocity.y) + abs(linear_velocity.x) + 2)
+	linear_velocity = Vector3(
+		clamp(linear_velocity.x, -max_x_speed, max_x_speed),
+		clamp(linear_velocity.y, -max_y_speed, max_y_speed),
+		clamp(linear_velocity.z, -max_z_speed, max_z_speed))
+	propellit.set_speeds(abs(linear_velocity.length()) + 2)
 	infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nInput up: %.1f" % [global_position.y, auto_float_target_altitude, linear_velocity.y, up_force_input]
