@@ -47,6 +47,18 @@ top_radius = 0.15
 bottom_radius = 0.4
 height = 0.1
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_hqgsj"]
+top_radius = 0.025
+bottom_radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuwjk"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_y2sx4"]
+size = Vector3(0.005, 0.2, 0.05)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3rjik"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_t5rug"]
@@ -67,6 +79,7 @@ script = ExtResource("1_4rtj8")
 [node name="Propellit" type="Node3D" parent="Helikopterimme" unique_id=989316934]
 transform = Transform3D(1, 0, 0, 0, 0.9888709, -0.148776, 0, 0.148776, 0.9888709, 0, 0.5878241, 0)
 script = ExtResource("3_j7suf")
+rotation_speedb = 2.137
 
 [node name="Propelli1" type="MeshInstance3D" parent="Helikopterimme/Propellit" unique_id=620213589]
 mesh = SubResource("BoxMesh_t6ig8")
@@ -143,6 +156,22 @@ mesh = SubResource("CylinderMesh_j7suf")
 transform = Transform3D(1, 0, 0, 0, 0.99052143, -0.13735811, 0, 0.13735811, 0.99052143, 0, 0.52326584, 0)
 mesh = SubResource("CylinderMesh_yec38")
 
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Helikopterimme/Runko" unique_id=1256414511]
+transform = Transform3D(1, 0, 0, 0, 0.38590607, -0.9225381, 0, 0.9225381, 0.38590607, 0, 0.233, 1.293)
+mesh = SubResource("CylinderMesh_hqgsj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Helikopterimme/Runko/MeshInstance3D6" unique_id=288112368]
+transform = Transform3D(-0.022086889, -0.9996675, 0.013302386, 0.91909885, -0.015067267, 0.39374006, -0.39340872, 0.02092272, 0.9191256, -0.013450624, 0.99252176, -0.0033409595)
+mesh = SubResource("CylinderMesh_nuwjk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Helikopterimme/Runko/MeshInstance3D6" unique_id=242646641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036513597, 0.9958284, -0.005142927)
+mesh = SubResource("BoxMesh_y2sx4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Helikopterimme/Runko/MeshInstance3D6" unique_id=1602894142]
+transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, -1, 0, 1, -2.9802322e-08, -0.036513597, 0.9958284, -0.005142927)
+mesh = SubResource("BoxMesh_y2sx4")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Helikopterimme" unique_id=1275307394]
 
 [node name="Maa" type="Node3D" parent="." unique_id=260443174]
@@ -158,7 +187,7 @@ mesh = SubResource("BoxMesh_t5rug")
 surface_material_override/0 = SubResource("StandardMaterial3D_j7suf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1634293039]
-transform = Transform3D(1, 0, 0, 0, 0.958472, 0.28518656, 0, -0.28518656, 0.958472, 0, 3.894912, 2.219965)
+transform = Transform3D(1, 0, 0, 0, 0.958472, 0.28518656, 0, -0.28518656, 0.958472, 0, 5.800761, 5.261491)
 fov = 90.0
 script = ExtResource("7_j7suf")
 
