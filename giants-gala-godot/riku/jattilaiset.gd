@@ -4,7 +4,7 @@ extends Node3D
 static var singleton : Jattilaiset
 const YKSI_JATTILAINEN = preload("res://riku/yksi_jattilainen.tscn")
 const ALKUMATKA := 30.0
-const LOPPUMATKA := 90.0
+const LOPPUMATKA := 30.0
 const INTERVALLI := 80.0
 const ALKU_INTERVALLI := INTERVALLI * 0.7
 static var INTRO :bool= false
@@ -70,9 +70,11 @@ static func get_closest_cammera_target(src: Vector3):
 		lahin_jatti = singleton.jattilaiset[singleton.jattilaiset.size() / 2]
 	return lahin_jatti
 
+static var end_countdown := 0.0
 func _process(delta):
 	if !LOPPU:
 		return
+	end_countdown += delta
 	const interval := 13.0
 	const front := 17.0
 	const down := -20.0

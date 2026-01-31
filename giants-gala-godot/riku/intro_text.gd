@@ -8,9 +8,8 @@ func _ready():
 	startText = split[0]
 	origText = split[1]
 
-var end_duration := 0.0
 func _process(delta):
-	if end_duration > 5.0:
+	if Jattilaiset.end_countdown > 5.0:
 		label_settings.font_color.a *= 0.99
 		label_settings.font_color.a += 0.01
 		text = "Wow! You did this!\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -19,7 +18,6 @@ func _process(delta):
 		intro(delta)
 	elif Jattilaiset.LOPPU:
 		label_settings.font_color.a *= 0.9
-		end_duration += delta
 	elif Jattilaiset.LOPUN_ALKU:
 		visible = true
 		outro(delta)
