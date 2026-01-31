@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
-[ext_resource type="PackedScene" uid="uid://22oy4cjo5o88" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
-[ext_resource type="Script" uid="uid://dxgx6xo316bba" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
-[ext_resource type="PackedScene" uid="uid://c3ryrvgjw2cgf" path="res://riku/hud.tscn" id="8_v4pft"]
+[ext_resource type="PackedScene" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
+[ext_resource type="Script" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
+[ext_resource type="PackedScene" path="res://riku/hud.tscn" id="8_v4pft"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
 panorama = ExtResource("2_40id6")

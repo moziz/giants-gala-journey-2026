@@ -1,11 +1,8 @@
 class_name Pyssy
 extends Node3D
 
-func maali_valittu(color: Color):
-	pass
-
-func objekti_valittu(objektin_tyyppi_tms: int):
-	pass
+@export var test_decal_texture: Texture2D
+@export var test_mesh: Mesh
 
 var plattrimer: Timer
 
@@ -16,8 +13,10 @@ func _ready() -> void:
 	plattrimer.timeout.connect(func():
 		plattrimer.start()
 		var payload = AmpuPayload.new()
-		payload.payload_type = AmpuPayload.PayloadType.PAINT
+		payload.payload_type = AmpuPayload.PayloadType.DECAL if randf() > .5  else AmpuPayload.PayloadType.MESH
 		payload.paint = Color.RED
+		payload.image = test_decal_texture
+		payload.mesh = test_mesh
 		
 		var decoree :Decoree= Jattilaiset.current_jatti.find_child("Decoree")
 		var from = global_position
@@ -32,3 +31,9 @@ func _ready() -> void:
 		)
 	);
 	plattrimer.start()
+
+func maali_valittu(color: Color):
+	pass
+
+func objekti_valittu(objektin_tyyppi_tms: int):
+	pass

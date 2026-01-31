@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://b275stsxqcesk"]
 
 [ext_resource type="Script" uid="uid://dq0qxql1pvjds" path="res://decorate/decorator_gun.gd" id="1_3841w"]
+[ext_resource type="Texture2D" uid="uid://bwwga13y6j1x6" path="res://assets/huulet.png" id="2_a5mjd"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_a5mjd"]
 
 [node name="Pyssy" type="Node3D" unique_id=1484461140]
 script = ExtResource("1_3841w")
+test_decal_texture = ExtResource("2_a5mjd")
+test_mesh = SubResource("PrismMesh_a5mjd")

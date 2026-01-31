@@ -6,7 +6,6 @@
 
 [node name="decoree" type="Node3D" unique_id=483027316]
 script = ExtResource("1_ele75")
-decaltex = ExtResource("2_5er0a")
 
 [node name="head-placeholder-kauhee-ruma" parent="." unique_id=487244909 instance=ExtResource("2_0bf1i")]
 
