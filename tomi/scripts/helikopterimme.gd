@@ -9,8 +9,31 @@ var auto_float_target_altitude = 10
 var auto_float_power_max: float = 1000.0
 var auto_float_force: float = 0
 
+var upward_power: float = 100_000.0
+
+var max_y_speed: float = 10.0
+
 
 func _physics_process(delta) -> void:
+	# handle controls
+	var up_force_input = 0
+	if Input.is_action_pressed("p1_thrust_up"):
+		up_force_input = 1
+	if Input.is_action_pressed("p1_thurst_down"):
+		up_force_input = -1
+		
+	if up_force_input == 0:
+		if not auto_float:
+			auto_float_target_altitude = global_position.y
+			auto_float = true
+			auto_float_force = 0
+	else:
+		auto_float = false
+		apply_force(Vector3.UP * upward_power * delta * up_force_input)
+	
+	
+	
+	
 	if auto_float:
 		var multi = 1
 		# check downward speed and apply up force
@@ -21,12 +44,18 @@ func _physics_process(delta) -> void:
 			if missing < 10:
 				multi = missing / 10.0;
 			if missing > 0:
-				auto_float_force = lerp(auto_float_force, auto_float_power_max, 0.5)
+				auto_float_force = lerp(auto_float_force, auto_float_power_max, 0.8)
 			
 		else:
 			auto_float_force *= 0.5
-			
-		# damp
+		
+		if linear_velocity.y < 0:
+			multi *= 1#4
 		apply_force(Vector3.UP * auto_float_force * multi)
 		auto_float_force *= 0.9
-	infotext.text = "Altitude: %.2f\nAltitude target: %.2f" % [global_position.y, auto_float_target_altitude]
+	# clamp up speed
+	if linear_velocity.y > max_y_speed:
+		linear_velocity.y = max_y_speed
+	if linear_velocity.y < -max_y_speed:
+		linear_velocity.y = -max_y_speed
+	infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nInput up: %.1f" % [global_position.y, auto_float_target_altitude, linear_velocity.y, up_force_input]
