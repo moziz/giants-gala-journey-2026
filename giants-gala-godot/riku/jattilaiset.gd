@@ -4,13 +4,14 @@ extends Node3D
 static var singleton : Jattilaiset
 const YKSI_JATTILAINEN = preload("res://riku/yksi_jattilainen.tscn")
 const ALKUMATKA := 30.0
-const LOPPUMATKA := 30.0
+const LOPPUMATKA := 5.0
 const INTERVALLI := 80.0
 const ALKU_INTERVALLI := INTERVALLI * 0.7
 static var INTRO :bool= false
 static var LOPUN_ALKU :bool= false
 static var LOPPU :bool= false
 static var NYKY_JATTI_INDKESI :int= 0
+static var YHEN_PROGRESSI :float= 0.0
 
 var jattilaiset :Array[Node3D]= []
 
@@ -25,11 +26,12 @@ func _ready():
 		jatti.position.x = ALKUMATKA + ALKU_INTERVALLI + i * INTERVALLI
 		jattilaiset.push_back(jatti)
 		#jatti.visible = false
+	current_jatti = jattilaiset.front()
 
 static func get_closest_cammera_target_pos(src: Vector3):
 	if LOPPU:
-		return get_closest_cammera_target(src).global_position + Vector3.UP * -10
-	return get_closest_cammera_target(src).global_position
+		return current_jatti.global_position + Vector3.UP * -10
+	return current_jatti.global_position
 
 static var countdown : float = 1.0
 static func get_closest_cammera_target(src: Vector3):
@@ -69,14 +71,20 @@ static func get_closest_cammera_target(src: Vector3):
 		assert("Lähin jätti puuttuu")
 		
 	NYKY_JATTI_INDKESI = singleton.jattilaiset.find(lahin_jatti)
+	var alku := closest.x - INTERVALLI * -0.5
+	var pituus := INTERVALLI
+	#print(alku, "/", src.x)
+	YHEN_PROGRESSI = clampf(1 - alku / pituus, 0, 1)
 
 	lahin_jatti.visible = true
 	if LOPPU and singleton:
 		lahin_jatti = singleton.jattilaiset[singleton.jattilaiset.size() / 2]
 	return lahin_jatti
 
+static var current_jatti :Node3D= null
 static var end_countdown := 0.0
 func _process(delta):
+	current_jatti = get_closest_cammera_target(Vector3.ZERO)
 	if !LOPPU:
 		return
 	end_countdown += delta

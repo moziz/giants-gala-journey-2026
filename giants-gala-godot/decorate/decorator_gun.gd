@@ -19,7 +19,7 @@ func _ready() -> void:
 		payload.payload_type = AmpuPayload.PayloadType.PAINT
 		payload.paint = Color.RED
 		
-		var decoree :Decoree= Jattilaiset.get_closest_cammera_target(global_position).find_child("Decoree")
+		var decoree :Decoree= Jattilaiset.current_jatti.find_child("Decoree")
 		var from = global_position
 		var dir = (decoree.global_position - global_position).normalized()
 		

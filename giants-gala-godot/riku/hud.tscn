@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cjst0ignus2rg" path="res://assets/paintingframe.png" id="5_5h2yi"]
 [ext_resource type="Texture2D" uid="uid://vs11y4f1dwl1" path="res://assets/artwork_4.png" id="5_sy68a"]
 [ext_resource type="Texture2D" uid="uid://f6d3kkrxn73w" path="res://assets/artwork_5.png" id="6_twx3a"]
+[ext_resource type="Texture2D" uid="uid://oi8dpyol3kge" path="res://assets/timerOverlay.png" id="8_7hrww"]
+[ext_resource type="Script" uid="uid://cbc6r3x84ejtj" path="res://addons/radial_progress/RadialProgress.gd" id="8_mkikd"]
+[ext_resource type="Script" uid="uid://dvocgti4devc2" path="res://riku/kello.gd" id="8_sy68a"]
 [ext_resource type="Texture2D" uid="uid://ln0t24gjqi82" path="res://assets/fame_9slice.png" id="10_p74l2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d4nlf"]
@@ -103,6 +106,43 @@ texture = ExtResource("5_5h2yi")
 expand_mode = 4
 stretch_mode = 4
 
+[node name="Kello" type="Control" parent="MALLI" unique_id=832627035]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 89.0
+offset_top = 23.0
+offset_right = 182.0
+offset_bottom = 114.0
+script = ExtResource("8_sy68a")
+
+[node name="Control" type="Control" parent="MALLI/Kello" unique_id=1473630269]
+layout_mode = 1
+anchor_right = 0.989
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 45.0
+offset_right = 46.022995
+offset_bottom = 45.0
+script = ExtResource("8_mkikd")
+max_value = 1.0
+radius = 40.0
+progress = 0.4
+bg_color = Color(0.5019608, 0.5019608, 0.5019608, 0)
+bar_color = Color(0.45487142, 0.6458556, 0.70377195, 1)
+
+[node name="Kehys" type="TextureRect" parent="MALLI/Kello" unique_id=1974908123]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_7hrww")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="HUD_Tyokalu" parent="." unique_id=245919087 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.997768, 0, 0.5170993, 1)
 layout_mode = 1
@@ -172,6 +212,7 @@ grow_vertical = 0
 paint_color = Color(0.1027, 0.79, 0.28598, 1)
 
 [node name="RAAMIT" type="Control" parent="." unique_id=807778476]
+visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 645.0
