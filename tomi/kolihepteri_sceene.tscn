@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ikwv2wcvx36j"]
 
 [ext_resource type="Script" uid="uid://snp71kcv6jea" path="res://tomi/scripts/helikopterimme.gd" id="1_00q04"]
+[ext_resource type="Script" uid="uid://cybvrhqaohuqs" path="res://tomi/show_if_no_input.gd" id="2_qsh4o"]
 [ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="2_vt3sy"]
 [ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="3_qsh4o"]
 [ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="4_yd8kj"]
@@ -91,6 +92,12 @@ Altitude target: "
 font_size = 100
 horizontal_alignment = 0
 vertical_alignment = 0
+
+[node name="controlText" type="Label3D" parent="Helikopterimme" unique_id=837499264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "Movement: WS,AD,QE,Z-Space"
+font_size = 100
+script = ExtResource("2_qsh4o")
 
 [node name="Runko" type="Node3D" parent="Helikopterimme" unique_id=922480821]
 

@@ -22,7 +22,10 @@ var _i: float = 0.0
 var _prev_error: float = 0.0
 var _d_state: float = 0.0
 
+var show_info: bool = false
 
+
+@export var rotation_speed: float = 50.0
 
 var upward_power: float = 100_000.0
 var sideward_power: float = 100_000.0
@@ -108,19 +111,33 @@ func _physics_process(delta: float) -> void:
 		var force_y := hover_force + u
 		auto_float_debug_value = force_y
 		#limit
-		force_y = clamp(force_y, -auto_float_power_max * 0.5, auto_float_power_max)
+		force_y = clamp(force_y, -auto_float_power_max, auto_float_power_max)
 		
 		
 		apply_force(Vector3.UP * force_y)
+		
+	var rot_input:float = 0.0
+	if Input.is_action_pressed("p1_rotate_ccw"):
+		rot_input = 1
+	if Input.is_action_pressed("p1_rotate_cw"):
+		rot_input = -1
+		
+	if rot_input != 0:
+		rotation_degrees = Vector3(0, rotation_degrees.y + delta * rotation_speed * rot_input, 0)
 
 	# clamp up speed and damp a bit
 	linear_velocity = Vector3(
 		clamp(linear_velocity.x * 0.95, -max_x_speed, max_x_speed),
 		clamp(linear_velocity.y, -max_y_speed, max_y_speed),
 		clamp(linear_velocity.z * 0.95, -max_z_speed, max_z_speed))
-	propellit.set_speeds(abs(linear_velocity.length()*0.5) + 3)
-	infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nAutofloat F: %.2f" % [global_position.y, auto_float_target_altitude, linear_velocity.y, auto_float_debug_value]
-
+	propellit.set_speeds(abs(linear_velocity.length() * 0.5) + 3)
+	
+	if Input.is_action_just_pressed("p1_show_info_toggle"):
+		show_info = not show_info
+	if show_info:
+		infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nAutofloat F: %.2f " % [global_position.y, auto_float_target_altitude, linear_velocity.y, auto_float_debug_value]
+	else:
+		infotext.text = ""
 func _find_node_by_name(root: Node, name: StringName) -> Node3D:
 	if root.name == name and root is Node3D:
 		return root as Node3D
