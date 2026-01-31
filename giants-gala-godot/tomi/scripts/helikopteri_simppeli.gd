@@ -15,6 +15,8 @@ var forward_power: float = 10.0
 
 @export var player_code = "p1"
 
+var prev_propel_speed: float = 0.0
+
 func _ready() -> void:
 	my_camera = _find_node_by_name(get_tree().current_scene, my_camera_name)
 	if my_camera == null:
@@ -53,10 +55,16 @@ func _process(delta):
 	if forward_force_input != 0:
 		global_position += directions["forward"] * forward_power * delta * forward_force_input
 	
-	var speed = 3
+	var speed = 0.2
 	for v in [up_force_input, side_force_input, forward_force_input]:
-		speed += abs(v)
-	propellit.set_speeds(speed * 3 )
+		speed += abs(v) * 50
+	if prev_propel_speed < speed:
+		prev_propel_speed = lerp(prev_propel_speed, speed, 0.5)
+	else:
+		prev_propel_speed -= prev_propel_speed * 0.75 * delta
+		if prev_propel_speed < 0.2:
+			prev_propel_speed = 0.2
+	propellit.set_speeds(prev_propel_speed)
 
 		
 	if Input.is_action_just_pressed(player_code + "_show_info_toggle"):
