@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4beiqvhbwtqo" path="res://riku/ymparisto.gd" id="1_nf0wm"]
 [ext_resource type="Script" uid="uid://c580x3rthyy13" path="res://riku/camera_3d.gd" id="2_7nowf"]
+[ext_resource type="Texture2D" uid="uid://0oy46jmh3waj" path="res://assets/background_tiling2.png" id="2_40id6"]
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
@@ -9,9 +10,17 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kgac2"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
+panorama = ExtResource("2_40id6")
+
+[sub_resource type="Sky" id="Sky_3tpsg"]
+sky_material = SubResource("PanoramaSkyMaterial_v4pft")
+
 [sub_resource type="Environment" id="Environment_kgac2"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.6117647, 0.7019608, 0.47058824, 1)
+sky = SubResource("Sky_3tpsg")
+sky_custom_fov = 72.7
 ambient_light_source = 2
 ambient_light_color = Color(0.6117647, 0.7019608, 0.47058824, 1)
 reflected_light_source = 1
