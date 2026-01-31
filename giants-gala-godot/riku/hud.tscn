@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://dswqnkhiv4cuk" path="res://assets/artwork_1.png" id="2_p74l2"]
 [ext_resource type="Texture2D" uid="uid://87r7hsfceuhh" path="res://assets/artwork_2.png" id="3_7hrww"]
 [ext_resource type="Script" uid="uid://2fg43f6vfenx" path="res://riku/raamit.gd" id="3_sly5m"]
-[ext_resource type="Texture2D" uid="uid://bjupr4ref530x" path="res://assets/paintcan.png" id="4_1xegc"]
 [ext_resource type="Texture2D" uid="uid://cosx8ax5n1a1s" path="res://assets/artwork_3.png" id="4_mkikd"]
 [ext_resource type="Texture2D" uid="uid://cjst0ignus2rg" path="res://assets/paintingframe.png" id="5_5h2yi"]
 [ext_resource type="Texture2D" uid="uid://vs11y4f1dwl1" path="res://assets/artwork_4.png" id="5_sy68a"]
 [ext_resource type="Texture2D" uid="uid://f6d3kkrxn73w" path="res://assets/artwork_5.png" id="6_twx3a"]
+[ext_resource type="Texture2D" uid="uid://ln0t24gjqi82" path="res://assets/fame_9slice.png" id="10_p74l2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d4nlf"]
 font_size = 32
@@ -172,7 +172,6 @@ grow_vertical = 0
 paint_color = Color(0.1027, 0.79, 0.28598, 1)
 
 [node name="RAAMIT" type="Control" parent="." unique_id=807778476]
-visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 645.0
@@ -183,17 +182,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -24.0
+offset_right = 27.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_1xegc")
-patch_margin_left = 200
-patch_margin_top = 133
-patch_margin_right = 200
+texture = ExtResource("10_p74l2")
 patch_margin_bottom = 254
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
 
 [node name="GET_READY" type="Label" parent="." unique_id=1406744723]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

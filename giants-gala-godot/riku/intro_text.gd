@@ -7,12 +7,13 @@ func _ready():
 	var split := self.text.split("\n")
 	startText = split[0]
 	origText = split[1]
+	visible = true
 
 func _process(delta):
 	if Jattilaiset.end_countdown > 5.0:
 		self_modulate.a *= 0.99
 		self_modulate.a += 0.01
-		text = "Wow! You did this!\n\n\n\n\n\n\n"
+		text = "Wow! You did this!\n\n\n\n\n"
 		label_settings.font_size = 48
 	elif Jattilaiset.INTRO:
 		intro(delta)
