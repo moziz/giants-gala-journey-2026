@@ -1,22 +1,11 @@
 [gd_scene format=3 uid="uid://ikwv2wcvx36j"]
 
-[ext_resource type="Script" uid="uid://snp71kcv6jea" path="res://tomi/scripts/helikopterimme.gd" id="1_4rtj8"]
-[ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="2_nw0r3"]
-[ext_resource type="Texture2D" uid="uid://conlh1aep1roo" path="res://tomi/textures/ground_gpt.png" id="3_21mtg"]
-[ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="3_j7suf"]
-[ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="3_t6ig8"]
-[ext_resource type="Script" uid="uid://cam0p05e75uoo" path="res://tomi/scripts/kolikamera.gd" id="7_j7suf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4m8"]
-albedo_texture = ExtResource("3_t6ig8")
-emission_enabled = true
-emission = Color(0.7294118, 0.7647059, 0.14509805, 1)
-emission_energy_multiplier = 0.4
-uv1_scale = Vector3(2.425, 5.73, 2.01)
-
-[sub_resource type="BoxMesh" id="BoxMesh_t6ig8"]
-material = SubResource("StandardMaterial3D_7l4m8")
-size = Vector3(0.255, 0.01, 3)
+[ext_resource type="Script" uid="uid://snp71kcv6jea" path="res://tomi/scripts/helikopterimme.gd" id="1_00q04"]
+[ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="2_vt3sy"]
+[ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="3_qsh4o"]
+[ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="4_yd8kj"]
+[ext_resource type="Texture2D" uid="uid://conlh1aep1roo" path="res://tomi/textures/ground_gpt.png" id="5_1o45j"]
+[ext_resource type="Script" uid="uid://cam0p05e75uoo" path="res://tomi/scripts/kolikamera.gd" id="6_a4yc6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t6ig8"]
 
@@ -59,6 +48,17 @@ height = 0.05
 [sub_resource type="BoxMesh" id="BoxMesh_y2sx4"]
 size = Vector3(0.005, 0.2, 0.05)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4m8"]
+albedo_texture = ExtResource("3_qsh4o")
+emission_enabled = true
+emission = Color(0.7294118, 0.7647059, 0.14509805, 1)
+emission_energy_multiplier = 0.4
+uv1_scale = Vector3(2.425, 5.73, 2.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6ig8"]
+material = SubResource("StandardMaterial3D_7l4m8")
+size = Vector3(0.255, 0.01, 3)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_3rjik"]
 size = Vector3(100, 1, 100)
 
@@ -66,7 +66,7 @@ size = Vector3(100, 1, 100)
 size = Vector3(100, 1, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7suf"]
-albedo_texture = ExtResource("3_21mtg")
+albedo_texture = ExtResource("5_1o45j")
 uv1_scale = Vector3(10, 10, 10)
 
 [node name="KolihepteriSceene" type="Node3D" unique_id=571967542]
@@ -74,24 +74,12 @@ uv1_scale = Vector3(10, 10, 10)
 [node name="Helikopterimme" type="RigidBody3D" parent="." unique_id=1420725809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.527261, 0)
 mass = 100.0
-gravity_scale = 0.2
-script = ExtResource("1_4rtj8")
-
-[node name="Propellit" type="Node3D" parent="Helikopterimme" unique_id=989316934]
-transform = Transform3D(1, 0, 0, 0, 0.9888709, -0.148776, 0, 0.148776, 0.9888709, 0, 0.5878241, 0)
-script = ExtResource("3_j7suf")
-rotation_speedb = 2.137
-
-[node name="Propelli1" type="MeshInstance3D" parent="Helikopterimme/Propellit" unique_id=620213589]
-mesh = SubResource("BoxMesh_t6ig8")
-script = ExtResource("2_nw0r3")
-rotation_speed = -2.137
-
-[node name="Propelli2" type="MeshInstance3D" parent="Helikopterimme/Propellit" unique_id=181426572]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005191326, 0)
-mesh = SubResource("BoxMesh_t6ig8")
-script = ExtResource("2_nw0r3")
-rotation_speed = 2.0
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_00q04")
+kp = 250.0
+ki = 10.0
+kd = 100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Helikopterimme" unique_id=990108112]
 shape = SubResource("BoxShape3D_t6ig8")
@@ -100,6 +88,7 @@ shape = SubResource("BoxShape3D_t6ig8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0)
 text = "Altitude: 10
 Altitude target: "
+font_size = 100
 horizontal_alignment = 0
 vertical_alignment = 0
 
@@ -173,6 +162,22 @@ mesh = SubResource("BoxMesh_y2sx4")
 transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, -1, 0, 1, -2.9802322e-08, -0.036513597, 0.9958284, -0.005142927)
 mesh = SubResource("BoxMesh_y2sx4")
 
+[node name="Propellit" type="Node3D" parent="Helikopterimme/Runko" unique_id=989316934]
+transform = Transform3D(1, 0, 0, 0, 0.9888709, -0.148776, 0, 0.148776, 0.9888709, 0, 0.5878241, 0)
+script = ExtResource("2_vt3sy")
+rotation_speedb = 2.137
+
+[node name="Propelli1" type="MeshInstance3D" parent="Helikopterimme/Runko/Propellit" unique_id=620213589]
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("4_yd8kj")
+rotation_speed = -2.137
+
+[node name="Propelli2" type="MeshInstance3D" parent="Helikopterimme/Runko/Propellit" unique_id=181426572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005191326, 0)
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("4_yd8kj")
+rotation_speed = 2.0
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Helikopterimme" unique_id=1275307394]
 
 [node name="Maa" type="Node3D" parent="." unique_id=260443174]
@@ -190,7 +195,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_j7suf")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1634293039]
 transform = Transform3D(1, 0, 0, 0, 0.958472, 0.28518656, 0, -0.28518656, 0.958472, 0, 5.800761, 5.261491)
 fov = 90.0
-script = ExtResource("7_j7suf")
+script = ExtResource("6_a4yc6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=726162660]
 transform = Transform3D(0.8792374, -0.4606782, -0.12131433, 0.21443182, 0.15531832, 0.9643108, -0.42539462, -0.8738716, 0.23534566, 0, 12.77284, 0)
