@@ -54,7 +54,6 @@ static func get_closest_cammera_target(src: Vector3):
 
 	if INTRO:
 		countdown = (closest.x - src.x - ALKU_INTERVALLI) / ALKUMATKA
-		print("alku: ", countdown)
 		if countdown <= 0.0:
 			INTRO = false
 			countdown = 0.0

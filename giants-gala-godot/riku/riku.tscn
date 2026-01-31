@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c580x3rthyy13" path="res://riku/camera_3d.gd" id="2_7nowf"]
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
+[ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
 [ext_resource type="Script" uid="uid://chr337e01mdcf" path="res://riku/intro_text.gd" id="4_kgac2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kgac2"]
@@ -35,6 +36,10 @@ mesh = SubResource("CapsuleMesh_kgac2")
 [node name="Camera3D" type="Camera3D" parent="Maailma/PelaajienYmparisto" unique_id=1778856546]
 environment = SubResource("Environment_kgac2")
 script = ExtResource("2_7nowf")
+
+[node name="SalamiValo" type="SpotLight3D" parent="Maailma/PelaajienYmparisto" unique_id=590424462]
+spot_range = 100.0
+script = ExtResource("3_7nowf")
 
 [node name="Liukuhihna" type="Node3D" parent="Maailma" unique_id=123787549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38.135)

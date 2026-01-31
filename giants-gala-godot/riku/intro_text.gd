@@ -12,8 +12,8 @@ func _process(delta):
 	if Jattilaiset.end_countdown > 5.0:
 		label_settings.font_color.a *= 0.99
 		label_settings.font_color.a += 0.01
-		text = "Wow! You did this!\n\n\n\n\n\n\n\n\n\n\n\n\n"
-		label_settings.font_size = 32
+		text = "Wow! You did this!\n\n\n\n\n\n\n"
+		label_settings.font_size = 48
 	elif Jattilaiset.INTRO:
 		intro(delta)
 	elif Jattilaiset.LOPPU:
