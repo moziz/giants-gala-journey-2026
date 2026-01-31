@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://p1nxh78kdjbh"]
+
+[ext_resource type="Script" uid="uid://c4beiqvhbwtqo" path="res://riku/ymparisto.gd" id="1_nf0wm"]
+[ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
+[ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
+[ext_resource type="PackedScene" uid="uid://cp2tnunixcfdx" path="res://riku/yksi_jattilainen.tscn" id="3_d4nlf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kgac2"]
+
+[node name="Riku" type="Node3D" unique_id=2056958564]
+
+[node name="Maailma" type="Node3D" parent="." unique_id=1687031566]
+
+[node name="PelaajienYmparisto" type="Node3D" parent="Maailma" unique_id=1699276675]
+script = ExtResource("1_nf0wm")
+
+[node name="Pelaajat" type="Node3D" parent="Maailma/PelaajienYmparisto" unique_id=935338512]
+transform = Transform3D(1, 0, 0, 0, 0.9885993, 0.15057072, 0, -0.15057072, 0.9885993, -1.7374716, 1.3217473, -3.5400188)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Maailma/PelaajienYmparisto/Pelaajat" unique_id=2088417114]
+transform = Transform3D(1, 0, 0, 0, -4.3711402e-08, -1.0000004, 0, 1.0000004, -4.3711402e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_kgac2")
+
+[node name="Camera3D" type="Camera3D" parent="Maailma/PelaajienYmparisto" unique_id=1778856546]
+
+[node name="Liukuhihna" type="Node3D" parent="Maailma" unique_id=123787549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.74246, 0, -38.135426)
+script = ExtResource("2_d4nlf")
+
+[node name="Jattilaiset" type="Node3D" parent="Maailma/Liukuhihna" unique_id=1790405881]
+script = ExtResource("2_kgac2")
+
+[node name="YksiJattilainen" parent="Maailma/Liukuhihna/Jattilaiset" unique_id=1189231729 instance=ExtResource("3_d4nlf")]
+
+[node name="YksiJattilainen2" parent="Maailma/Liukuhihna/Jattilaiset" unique_id=1548454733 instance=ExtResource("3_d4nlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.1659, 0, 0)
+
+[node name="YksiJattilainen3" parent="Maailma/Liukuhihna/Jattilaiset" unique_id=1018957613 instance=ExtResource("3_d4nlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 334.12906, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Maailma" unique_id=1262031826]

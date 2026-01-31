@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cp2tnunixcfdx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cxf7r"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1ralk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1ralk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cxf7r"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vvx4m"]
+
+[node name="YksiJattilainen" type="Node3D" unique_id=1189231729]
+
+[node name="CameraTarget" type="Node3D" parent="." unique_id=1412520312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01693058, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=908892823]
+transform = Transform3D(22.735, 0, 0, 0, 22.735, 0, 0, 0, 22.735, 0, -29.974443, 0)
+mesh = SubResource("CapsuleMesh_cxf7r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=757964786]
+transform = Transform3D(21.715, 0, 0, 0, 21.715, 0, 0, 0, 21.715, 0, 1.042984, 0)
+mesh = SubResource("SphereMesh_1ralk")
+
+[node name="nena" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=1677740100]
+transform = Transform3D(0.17943329, 0.012388806, 0.007087671, -0.0141914105, 0.16439831, 0.07191541, -0.0015236397, -0.07224776, 0.16485737, 0, -0.009765819, 0.47618878)
+mesh = SubResource("CapsuleMesh_1ralk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2/nena" unique_id=767975879]
+transform = Transform3D(1, 2.142042e-08, 1.3969839e-09, -3.4691766e-08, 1.0000004, -2.9802322e-08, -2.3283064e-09, -1.1920929e-07, 1, 0.23317337, -0.30757082, -0.13263607)
+mesh = SubResource("SphereMesh_cxf7r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D2/nena" unique_id=1219227091]
+transform = Transform3D(1, 2.188608e-08, 1.3969839e-09, -3.655441e-08, 1.0000004, -2.9802322e-08, -1.8626451e-09, -1.4901161e-07, 1, -0.209258, -0.2974478, -0.18464398)
+mesh = SubResource("SphereMesh_cxf7r")
+
+[node name="silma_1" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=1406396446]
+transform = Transform3D(0.18000002, 0, 0, 0, 0.18000002, 0, 0, 0, 0.18000002, -0.16773659, 0.05952092, 0.4289725)
+mesh = SubResource("SphereMesh_vvx4m")
+
+[node name="silma_2" type="MeshInstance3D" parent="MeshInstance3D2" unique_id=1696611079]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0.17752624, 0.080376014, 0.43720204)
+mesh = SubResource("SphereMesh_vvx4m")
