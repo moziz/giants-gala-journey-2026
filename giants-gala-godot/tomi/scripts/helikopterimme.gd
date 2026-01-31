@@ -139,6 +139,7 @@ func _physics_process(delta: float) -> void:
 		infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nAutofloat F: %.2f " % [global_position.y, auto_float_target_altitude, linear_velocity.y, auto_float_debug_value]
 	else:
 		infotext.text = ""
+
 func _find_node_by_name(root: Node, name: StringName) -> Node3D:
 	if root.name == name and root is Node3D:
 		return root as Node3D

@@ -52,7 +52,12 @@ func _process(delta):
 		
 	if forward_force_input != 0:
 		global_position += directions["forward"] * forward_power * delta * forward_force_input
-		
+	
+	var speed = 3
+	for v in [up_force_input, side_force_input, forward_force_input]:
+		speed += abs(v)
+	propellit.set_speeds(speed * 3 )
+
 		
 	if Input.is_action_just_pressed(player_code + "_show_info_toggle"):
 		show_info = not show_info
