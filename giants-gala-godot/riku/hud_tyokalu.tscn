@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bjupr4ref530x" path="res://assets/paintcan.png" id="3_jf5wc"]
 
 [node name="HUD_Tyokalu" type="Control" unique_id=245919087]
+self_modulate = Color(0.82600015, 0.13, 1, 1)
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -12,15 +13,16 @@ anchor_bottom = 1.0
 offset_top = -98.0
 offset_right = 200.0
 offset_bottom = 2.0
+grow_vertical = 0
 script = ExtResource("1_58sex")
-paint_color = Color(0.82600015, 0.13, 1, 1)
 
 [node name="Maalisisus" type="TextureRect" parent="." unique_id=441704309]
-self_modulate = Color(1, 0.16000003, 0.16000003, 1)
+self_modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_2wkx1")
@@ -32,6 +34,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_jf5wc")

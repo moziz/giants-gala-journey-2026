@@ -35,5 +35,5 @@ func _ready() -> void:
 func maali_valittu(color: Color):
 	pass
 
-func objekti_valittu(objektin_tyyppi_tms: int):
+func objekti_valittu(objekti_scene: PackedScene, color: Color):
 	pass
