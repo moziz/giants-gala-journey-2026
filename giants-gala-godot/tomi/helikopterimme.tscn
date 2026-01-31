@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="3_kayl2"]
 [ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="4_jfrso"]
 [ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="5_w6hb6"]
+[ext_resource type="PackedScene" uid="uid://b275stsxqcesk" path="res://riku/pyssy.tscn" id="6_6j77p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t6ig8"]
 
@@ -171,3 +172,5 @@ script = ExtResource("5_w6hb6")
 rotation_speed = 2.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1485865870]
+
+[node name="Pyssy" parent="." unique_id=1484461140 instance=ExtResource("6_6j77p")]

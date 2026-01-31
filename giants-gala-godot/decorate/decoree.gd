@@ -12,7 +12,7 @@ func amputulloo(from_global: Vector3, dir_global: Vector3, payload: AmpuPayload)
 	raycast.force_raycast_update()
 	
 	if raycast.is_colliding():
-		print("osuu!")
+		#print("osuu!")
 		var hit_pos = to_local(raycast.get_collision_point())
 		var normal = global_transform.basis.inverse() * raycast.get_collision_normal()
 		blottaa(hit_pos, normal, Color.BROWN, 0.3)
