@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b275stsxqcesk"]
+
+[ext_resource type="Script" uid="uid://dq0qxql1pvjds" path="res://decorate/decorator_gun.gd" id="1_3841w"]
+
+[node name="Pyssy" type="Node3D" unique_id=1484461140]
+script = ExtResource("1_3841w")

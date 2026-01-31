@@ -24,7 +24,7 @@ func _process(delta):
 	else:
 		visible = false
 
-func intro(delta: float):
+func intro(_delta: float):
 	const END_PORTION := 0.7
 	var prog := (1 - Jattilaiset.countdown) * (1.0 + END_PORTION)
 	if prog < 1.0:

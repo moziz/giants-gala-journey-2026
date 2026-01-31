@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://0oy46jmh3waj" path="res://assets/background_tiling2.png" id="2_40id6"]
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
+[ext_resource type="PackedScene" uid="uid://b275stsxqcesk" path="res://riku/pyssy.tscn" id="2_v4pft"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
 [ext_resource type="Script" uid="uid://chr337e01mdcf" path="res://riku/intro_text.gd" id="4_kgac2"]
 
@@ -35,12 +36,14 @@ font_size = 32
 [node name="PelaajienYmparisto" type="Node3D" parent="Maailma" unique_id=1699276675]
 script = ExtResource("1_nf0wm")
 
-[node name="Pelaajat" type="Node3D" parent="Maailma/PelaajienYmparisto" unique_id=935338512]
+[node name="Pelaaja_1" type="Node3D" parent="Maailma/PelaajienYmparisto" unique_id=935338512]
 transform = Transform3D(1, 0, 0, 0, 0.9885993, 0.15057072, 0, -0.15057072, 0.9885993, -1.7374716, 1.3217473, -3.5400188)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Maailma/PelaajienYmparisto/Pelaajat" unique_id=2088417114]
+[node name="PelaajanGraffaPlaceholder" type="MeshInstance3D" parent="Maailma/PelaajienYmparisto/Pelaaja_1" unique_id=2088417114]
 transform = Transform3D(1, 0, 0, 0, -4.3711402e-08, -1.0000004, 0, 1.0000004, -4.3711402e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_kgac2")
+
+[node name="Pyssy" parent="Maailma/PelaajienYmparisto/Pelaaja_1" unique_id=1484461140 instance=ExtResource("2_v4pft")]
 
 [node name="Camera3D" type="Camera3D" parent="Maailma/PelaajienYmparisto" unique_id=1778856546]
 environment = SubResource("Environment_kgac2")

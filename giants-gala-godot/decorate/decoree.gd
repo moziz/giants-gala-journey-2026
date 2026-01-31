@@ -1,9 +1,12 @@
 class_name Decoree extends Node3D
 
 @export var decaltex: Texture2D
+@onready var raycast := RayCast3D.new()
+
+func _ready():
+	add_child(raycast)
 
 func amputulloo(from_global: Vector3, dir_global: Vector3, payload: AmpuPayload):
-	var raycast: RayCast3D = $paint_ray
 	raycast.position = to_local(from_global)
 	raycast.target_position = raycast.to_local(from_global + dir_global * 100)
 	raycast.force_raycast_update()

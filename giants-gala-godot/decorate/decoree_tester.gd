@@ -19,6 +19,7 @@ func _ready() -> void:
 		payload.payload_type = AmpuPayload.PayloadType.PAINT
 		payload.paint = Color.RED
 		
+		decoree = Jattilaiset.get_closest_cammera_target(global_position).find_child("Decoree")
 		var from = global_position
 		var dir = (decoree.global_position - global_position).normalized()
 		
@@ -39,9 +40,9 @@ func _process(delta: float) -> void:
 	if Input.is_physical_key_pressed(KEY_K):
 		move_dir += Vector3.DOWN
 	if Input.is_physical_key_pressed(KEY_J):
-		move_dir -= Vector3.LEFT
+		move_dir += Vector3.LEFT
 	if Input.is_physical_key_pressed(KEY_L):
-		move_dir -= Vector3.RIGHT
+		move_dir += Vector3.RIGHT
 	if Input.is_physical_key_pressed(KEY_U):
 		move_dir += Vector3.BACK
 	if Input.is_physical_key_pressed(KEY_O):
@@ -50,4 +51,4 @@ func _process(delta: float) -> void:
 	if move_dir.length_squared() > 0:
 		move_dir = move_dir.normalized()
 	
-	global_position += move_dir * delta * fly_speed
+	position += move_dir * delta * fly_speed
