@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
 [ext_resource type="PackedScene" uid="uid://22oy4cjo5o88" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
 [ext_resource type="Script" uid="uid://dxgx6xo316bba" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
-[ext_resource type="Texture2D" uid="uid://conlh1aep1roo" path="res://tomi/textures/ground_gpt.png" id="8_3tpsg"]
 [ext_resource type="PackedScene" uid="uid://c3ryrvgjw2cgf" path="res://riku/hud.tscn" id="8_v4pft"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
@@ -25,16 +24,6 @@ sky_custom_fov = 72.7
 ambient_light_source = 2
 ambient_light_color = Color(0.6117647, 0.7019608, 0.47058824, 1)
 reflected_light_source = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pu45m"]
-size = Vector3(100, 1, 100)
-
-[sub_resource type="BoxMesh" id="BoxMesh_m8qqj"]
-size = Vector3(2000, 1, 2000)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh12u"]
-albedo_texture = ExtResource("8_3tpsg")
-uv1_scale = Vector3(200, 200, 200)
 
 [node name="Riku" type="Node3D" unique_id=2056958564]
 
@@ -88,19 +77,5 @@ transform = Transform3D(0.99999994, 0, 0, 0, -4.371139e-08, -0.99999994, 0, 1, -
 visible = false
 light_color = Color(0.7366933, 0.76, 0.6992, 1)
 light_energy = 0.8
-
-[node name="Lähtöalusta" type="Node3D" parent="Maailma" unique_id=418773904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -63.320812, 0)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Maailma/Lähtöalusta" unique_id=37494160]
-visible = false
-freeze = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Maailma/Lähtöalusta/RigidBody3D" unique_id=741839273]
-shape = SubResource("BoxShape3D_pu45m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Maailma/Lähtöalusta" unique_id=2117627563]
-mesh = SubResource("BoxMesh_m8qqj")
-surface_material_override/0 = SubResource("StandardMaterial3D_mh12u")
 
 [node name="HUD" parent="." unique_id=282879990 instance=ExtResource("8_v4pft")]
