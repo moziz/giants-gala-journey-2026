@@ -10,12 +10,14 @@ var auto_float_power_max: float = 1000.0
 var auto_float_force: float = 0
 
 var upward_power: float = 100_000.0
+var sideward_power: float = 100_000.0
 
 var max_y_speed: float = 10.0
+var max_x_speed: float = 10.0
 
 
 func _physics_process(delta) -> void:
-	# handle controls
+	# handle _p1_ inputs
 	var up_force_input = 0
 	if Input.is_action_pressed("p1_thrust_up"):
 		up_force_input = 1
@@ -30,10 +32,18 @@ func _physics_process(delta) -> void:
 	else:
 		auto_float = false
 		apply_force(Vector3.UP * upward_power * delta * up_force_input)
+	var side_force_input = 0
+	if Input.is_action_pressed("p1_thrust_right"):
+		side_force_input = 1
+	if Input.is_action_pressed("p1_thurst_left"):
+		side_force_input = -1
+		
+	if side_force_input != 0:
+		apply_force(Vector3.RIGHT * sideward_power * delta * side_force_input)
 	
 	
 	
-	
+	## AUTO FLOAT SYSTEM
 	if auto_float:
 		var multi = 1
 		# check downward speed and apply up force
@@ -58,4 +68,9 @@ func _physics_process(delta) -> void:
 		linear_velocity.y = max_y_speed
 	if linear_velocity.y < -max_y_speed:
 		linear_velocity.y = -max_y_speed
+	# clamp side speed
+	if linear_velocity.x > max_x_speed:
+		linear_velocity.x = max_x_speed
+	if linear_velocity.x < -max_x_speed:
+		linear_velocity.x = -max_x_speed
 	infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nInput up: %.1f" % [global_position.y, auto_float_target_altitude, linear_velocity.y, up_force_input]
