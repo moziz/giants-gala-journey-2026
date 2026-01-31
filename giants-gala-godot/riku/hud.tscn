@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://c3ryrvgjw2cgf"]
 
+[ext_resource type="Script" uid="uid://di6torp73dwun" path="res://riku/malli.gd" id="1_1xegc"]
 [ext_resource type="Script" uid="uid://chr337e01mdcf" path="res://riku/intro_text.gd" id="1_etfxu"]
+[ext_resource type="Texture2D" uid="uid://vmurlfpsyfxe" path="res://icon.svg" id="1_sly5m"]
 [ext_resource type="PackedScene" uid="uid://b5vf8miru34in" path="res://riku/hud_tyokalu.tscn" id="2_5h2yi"]
 [ext_resource type="Script" uid="uid://2fg43f6vfenx" path="res://riku/raamit.gd" id="3_sly5m"]
 [ext_resource type="Texture2D" uid="uid://bjupr4ref530x" path="res://assets/paintcan.png" id="4_1xegc"]
+[ext_resource type="Texture2D" uid="uid://cjst0ignus2rg" path="res://assets/paintingframe.png" id="5_5h2yi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d4nlf"]
 font_size = 32
@@ -16,19 +19,35 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GET_READY" type="Label" parent="." unique_id=1406744723]
+[node name="MALLI" type="Control" parent="." unique_id=160149065]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchor_bottom = 0.68600005
+offset_left = -21.0
+offset_top = 23.0
+offset_right = 378.0
+offset_bottom = 85.471954
+script = ExtResource("1_1xegc")
+
+[node name="MalliMaalaus" type="TextureRect" parent="MALLI" unique_id=1112015115]
+layout_mode = 1
+anchors_preset = -1
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "GET READY!
-1... 2... 3...    "
-label_settings = SubResource("LabelSettings_d4nlf")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("1_etfxu")
+offset_left = 43.0
+offset_top = 136.0
+offset_right = 43.0
+offset_bottom = -371.0
+texture = ExtResource("1_sly5m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MallinRaamit" type="TextureRect" parent="MALLI" unique_id=2136573653]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 399.0
+texture = ExtResource("5_5h2yi")
+expand_mode = 4
+stretch_mode = 4
 
 [node name="HUD_Tyokalu" parent="." unique_id=245919087 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.997768, 0, 0.5170993, 1)
@@ -99,16 +118,16 @@ grow_vertical = 0
 paint_color = Color(0.1027, 0.79, 0.28598, 1)
 
 [node name="RAAMIT" type="Control" parent="." unique_id=807778476]
-visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 645.0
 script = ExtResource("3_sly5m")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="RAAMIT" unique_id=1649743592]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 645.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource("4_1xegc")
 patch_margin_left = 200
 patch_margin_top = 133
@@ -116,3 +135,17 @@ patch_margin_right = 200
 patch_margin_bottom = 254
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 1
+
+[node name="GET_READY" type="Label" parent="." unique_id=1406744723]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GET READY!
+1... 2... 3...    "
+label_settings = SubResource("LabelSettings_d4nlf")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_etfxu")

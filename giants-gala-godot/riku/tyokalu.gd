@@ -28,7 +28,6 @@ func _ready():
 		if child is not Helikopterimme:
 			continue
 		kopterit.push_back(child)
-		print(child) 
 
 
 func _process(delta):
@@ -44,7 +43,6 @@ func _process(delta):
 	for kopteri in kopterit:
 		var screen_pos :Vector2= get_viewport().get_camera_3d().unproject_position(kopteri.global_position)
 		if get_rect().has_point(screen_pos):
-			print("!!!!!!!!!!!!!!!!")
 			var pyssy :Pyssy= kopteri.find_child("Pyssy")
 			if !pyssy:
 				push_error("Kopterilla ei oo Pyssy lasta")
