@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://22oy4cjo5o88"]
+
+[ext_resource type="Script" uid="uid://cnbyuq8pahsvy" path="res://tomi/scripts/helikopteri_simppeli.gd" id="1_gvper"]
+[ext_resource type="Script" uid="uid://cybvrhqaohuqs" path="res://tomi/show_if_no_input.gd" id="2_36uks"]
+[ext_resource type="Script" uid="uid://coeqmh86egmuw" path="res://tomi/scripts/propelli_nopeutin.gd" id="3_8uodv"]
+[ext_resource type="Texture2D" uid="uid://bfmyagw20auya" path="res://tomi/textures/metallic_gpt.png" id="4_51wbg"]
+[ext_resource type="Script" uid="uid://bqoom3vn6tiwm" path="res://tomi/scripts/roottorin_rolleri.gd" id="5_vo63k"]
+[ext_resource type="PackedScene" uid="uid://b275stsxqcesk" path="res://riku/pyssy.tscn" id="6_ejq27"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t6ig8"]
+top_radius = 0.4375
+bottom_radius = 0.4375
+height = 0.109375
+
+[sub_resource type="BoxMesh" id="BoxMesh_j7suf"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7l4m8"]
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.2
+
+[sub_resource type="TorusMesh" id="TorusMesh_t6ig8"]
+inner_radius = 0.392
+outer_radius = 0.458
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j7suf"]
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.6008789
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yec38"]
+top_radius = 0.15
+bottom_radius = 0.4
+height = 0.1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hqgsj"]
+top_radius = 0.025
+bottom_radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuwjk"]
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.05
+
+[sub_resource type="BoxMesh" id="BoxMesh_y2sx4"]
+size = Vector3(0.005, 0.2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4m8"]
+albedo_texture = ExtResource("4_51wbg")
+emission_enabled = true
+emission = Color(0.7294118, 0.7647059, 0.14509805, 1)
+emission_energy_multiplier = 0.4
+uv1_scale = Vector3(2.425, 5.73, 2.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6ig8"]
+material = SubResource("StandardMaterial3D_7l4m8")
+size = Vector3(0.255, 0.01, 3)
+
+[node name="Helikopterimme_1" type="Node3D" unique_id=572561793]
+script = ExtResource("1_gvper")
+
+[node name="infotext" type="Label3D" parent="." unique_id=795679052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0)
+text = "Altitude: 10
+Altitude target: "
+font_size = 100
+horizontal_alignment = 0
+vertical_alignment = 0
+
+[node name="controlText" type="Label3D" parent="." unique_id=1603785392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "Movement: WS,AD,Z-Space"
+font_size = 100
+script = ExtResource("2_36uks")
+
+[node name="Runko" type="Node3D" parent="." unique_id=1640758185]
+
+[node name="pohja" type="MeshInstance3D" parent="Runko" unique_id=211235364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27929688, 0)
+mesh = SubResource("CylinderMesh_t6ig8")
+
+[node name="jalka1" type="MeshInstance3D" parent="Runko" unique_id=95442512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4985472, -0.4839158, 0)
+mesh = SubResource("BoxMesh_j7suf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Runko/jalka1" unique_id=416154483]
+transform = Transform3D(0.7558763, 0.65471447, 0, -0.65471447, 0.7558763, 0, 0, 0, 1, 0.08781713, 0.105389595, -0.18885137)
+mesh = SubResource("CylinderMesh_7l4m8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Runko/jalka1" unique_id=701363399]
+transform = Transform3D(0.7558763, 0.65471447, 0, -0.65471447, 0.7558763, 0, 0, 0, 1, 0.08781713, 0.105389595, 0.20087315)
+mesh = SubResource("CylinderMesh_7l4m8")
+
+[node name="jalka2" type="MeshInstance3D" parent="Runko" unique_id=1558686105]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.499, -0.484, 0)
+mesh = SubResource("BoxMesh_j7suf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Runko/jalka2" unique_id=2105902233]
+transform = Transform3D(0.7558763, 0.65471447, 0, -0.65471447, 0.7558763, 0, 0, 0, 1, 0.08781713, 0.105389595, -0.18885137)
+mesh = SubResource("CylinderMesh_7l4m8")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Runko/jalka2" unique_id=1241089816]
+transform = Transform3D(0.7558763, 0.65471447, 0, -0.65471447, 0.7558763, 0, 0, 0, 1, 0.08781713, 0.105389595, 0.20087315)
+mesh = SubResource("CylinderMesh_7l4m8")
+
+[node name="Koppa" type="MeshInstance3D" parent="Runko" unique_id=737450324]
+transform = Transform3D(1, 0, 0, 0, 4.455, 0, 0, 0, 1, 0, -0.16862345, 0)
+mesh = SubResource("TorusMesh_t6ig8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Runko" unique_id=649777551]
+transform = Transform3D(0.9659257, -0.258819, 0, 0.24999997, 0.93301255, -0.258819, 0.06698729, 0.24999997, 0.96592575, 0.21388206, 0.22733498, -0.22184826)
+mesh = SubResource("CylinderMesh_j7suf")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Runko" unique_id=1248319208]
+transform = Transform3D(0.96592563, 0.25881898, 0, -0.24999996, 0.9330125, -0.258819, -0.06698728, 0.24999996, 0.9659257, -0.214, 0.227, -0.222)
+mesh = SubResource("CylinderMesh_j7suf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Runko" unique_id=1017497019]
+transform = Transform3D(0.96592563, -0.25881898, 0, 0.24999996, 0.9330125, 0.258819, -0.06698728, -0.24999996, 0.9659257, 0.28074482, 0.22733498, 0.13802364)
+mesh = SubResource("CylinderMesh_j7suf")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Runko" unique_id=1771423994]
+transform = Transform3D(0.9659256, 0.25881898, 0, -0.24999994, 0.9330124, 0.25881898, 0.06698728, -0.24999994, 0.96592563, -0.281, 0.227, 0.138)
+mesh = SubResource("CylinderMesh_j7suf")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Runko" unique_id=891540324]
+transform = Transform3D(1, 0, 0, 0, 0.99052143, -0.13735811, 0, 0.13735811, 0.99052143, 0, 0.52326584, 0)
+mesh = SubResource("CylinderMesh_yec38")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Runko" unique_id=2016526600]
+transform = Transform3D(1, 0, 0, 0, 0.38590607, -0.9225381, 0, 0.9225381, 0.38590607, 0, 0.233, 1.293)
+mesh = SubResource("CylinderMesh_hqgsj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Runko/MeshInstance3D6" unique_id=1062731925]
+transform = Transform3D(-0.022086889, -0.9996675, 0.013302386, 0.91909885, -0.015067267, 0.39374006, -0.39340872, 0.02092272, 0.9191256, -0.013450624, 0.99252176, -0.0033409595)
+mesh = SubResource("CylinderMesh_nuwjk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Runko/MeshInstance3D6" unique_id=145602034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036513597, 0.9958284, -0.005142927)
+mesh = SubResource("BoxMesh_y2sx4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Runko/MeshInstance3D6" unique_id=1703494138]
+transform = Transform3D(1, 0, 0, 0, -2.9802322e-08, -1, 0, 1, -2.9802322e-08, -0.036513597, 0.9958284, -0.005142927)
+mesh = SubResource("BoxMesh_y2sx4")
+
+[node name="Propellit" type="Node3D" parent="Runko" unique_id=405580101]
+transform = Transform3D(1, 0, 0, 0, 0.9888709, -0.148776, 0, 0.148776, 0.9888709, 0, 0.5878241, 0)
+script = ExtResource("3_8uodv")
+rotation_speedb = 2.137
+
+[node name="Propelli1" type="MeshInstance3D" parent="Runko/Propellit" unique_id=530875844]
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("5_vo63k")
+rotation_speed = -2.137
+
+[node name="Propelli2" type="MeshInstance3D" parent="Runko/Propellit" unique_id=827202108]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005191326, 0)
+mesh = SubResource("BoxMesh_t6ig8")
+script = ExtResource("5_vo63k")
+rotation_speed = 2.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=319600620]
+
+[node name="Pyssy" parent="." unique_id=1484461140 instance=ExtResource("6_ejq27")]

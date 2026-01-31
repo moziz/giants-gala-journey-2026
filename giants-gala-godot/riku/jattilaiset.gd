@@ -65,6 +65,9 @@ static func get_closest_cammera_target(src: Vector3):
 	if closest.x + INTERVALLI + LOPPUMATKA < src.x:
 		LOPPU = true
 
+	if lahin_jatti == null:
+		assert("Lähin jätti puuttuu")
+		
 	NYKY_JATTI_INDKESI = singleton.jattilaiset.find(lahin_jatti)
 
 	lahin_jatti.visible = true

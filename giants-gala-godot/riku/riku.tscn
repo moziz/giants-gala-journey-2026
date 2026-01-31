@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
-[ext_resource type="PackedScene" uid="uid://dpaclehuceyi6" path="res://tomi/helikopterimme.tscn" id="5_v4pft"]
+[ext_resource type="PackedScene" uid="uid://22oy4cjo5o88" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
+[ext_resource type="Script" uid="uid://dxgx6xo316bba" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
+[ext_resource type="Texture2D" uid="uid://conlh1aep1roo" path="res://tomi/textures/ground_gpt.png" id="8_3tpsg"]
 [ext_resource type="PackedScene" uid="uid://c3ryrvgjw2cgf" path="res://riku/hud.tscn" id="8_v4pft"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
@@ -24,6 +26,16 @@ ambient_light_source = 2
 ambient_light_color = Color(0.6117647, 0.7019608, 0.47058824, 1)
 reflected_light_source = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pu45m"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m8qqj"]
+size = Vector3(2000, 1, 2000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh12u"]
+albedo_texture = ExtResource("8_3tpsg")
+uv1_scale = Vector3(200, 200, 200)
+
 [node name="Riku" type="Node3D" unique_id=2056958564]
 
 [node name="Maailma" type="Node3D" parent="." unique_id=1687031566]
@@ -39,8 +51,26 @@ script = ExtResource("2_7nowf")
 spot_range = 100.0
 script = ExtResource("3_7nowf")
 
-[node name="Kopteri_1" parent="Maailma/PelaajienYmparisto" unique_id=2090436581 instance=ExtResource("5_v4pft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.336536)
+[node name="Helikopterimme_1" parent="Maailma/PelaajienYmparisto" unique_id=572561793 instance=ExtResource("5_3tpsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.771837, -0.3417536, -5.4089084)
+controls_text = "Movement: AD, WS, Z-Space"
+
+[node name="Helikopterimme_2" parent="Maailma/PelaajienYmparisto" unique_id=1741275353 instance=ExtResource("5_3tpsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5325985, -0.3417536, -5.4089084)
+player_code = "p2"
+
+[node name="Helikopterimme_3" parent="Maailma/PelaajienYmparisto" unique_id=201572042 instance=ExtResource("5_3tpsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92658424, -0.3417536, -5.4089084)
+controls_text = "Press 3 to kill me"
+player_code = "p3"
+
+[node name="Helikopterimme_4" parent="Maailma/PelaajienYmparisto" unique_id=1260064074 instance=ExtResource("5_3tpsg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8879738, -0.3417536, -5.4089084)
+controls_text = "Pleas, press 4 and kill me"
+player_code = "p4"
+
+[node name="Pelaaja~aktivaattori" type="Node3D" parent="Maailma/PelaajienYmparisto" unique_id=1907495565]
+script = ExtResource("6_pu45m")
 
 [node name="Liukuhihna" type="Node3D" parent="Maailma" unique_id=123787549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -38.135)
@@ -58,5 +88,19 @@ transform = Transform3D(0.99999994, 0, 0, 0, -4.371139e-08, -0.99999994, 0, 1, -
 visible = false
 light_color = Color(0.7366933, 0.76, 0.6992, 1)
 light_energy = 0.8
+
+[node name="Lähtöalusta" type="Node3D" parent="Maailma" unique_id=418773904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -63.320812, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Maailma/Lähtöalusta" unique_id=37494160]
+visible = false
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Maailma/Lähtöalusta/RigidBody3D" unique_id=741839273]
+shape = SubResource("BoxShape3D_pu45m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Maailma/Lähtöalusta" unique_id=2117627563]
+mesh = SubResource("BoxMesh_m8qqj")
+surface_material_override/0 = SubResource("StandardMaterial3D_mh12u")
 
 [node name="HUD" parent="." unique_id=282879990 instance=ExtResource("8_v4pft")]
