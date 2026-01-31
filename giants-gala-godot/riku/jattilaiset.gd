@@ -18,7 +18,7 @@ func _ready():
 	LOPUN_ALKU = false
 	LOPPU = false
 	singleton = self
-	for i in range(7):
+	for i in range(5):
 		var jatti :Node3D= YKSI_JATTILAINEN.instantiate()
 		self.add_child(jatti)
 		jatti.position.x = ALKUMATKA + ALKU_INTERVALLI + i * INTERVALLI
@@ -27,7 +27,7 @@ func _ready():
 
 static func get_closest_cammera_target_pos(src: Vector3):
 	if LOPPU:
-		return get_closest_cammera_target(src).global_position + Vector3.UP * 10
+		return get_closest_cammera_target(src).global_position + Vector3.UP * -10
 	return get_closest_cammera_target(src).global_position
 
 static var countdown : float = 1.0

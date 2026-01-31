@@ -5,7 +5,7 @@ extends Node3D
 @onready var target_pos := position
 @onready var target_rot := rotation
 @onready var breathe := randf() * TAU
-@onready var breathe_speed := randf_range(0.9, 1.0)
+@onready var breathe_speed := randf_range(0.7, 1.0)
 var interval := 0.0
 
 func _process(delta):

@@ -1,7 +1,12 @@
 extends SpotLight3D
 
+func _ready():
+	light_energy = 0
+
 var treshold := 0.0
 func _physics_process(delta):
+	if !Jattilaiset.LOPUN_ALKU:
+		return
 	light_energy = 0
 	treshold -= delta
 	if treshold <= randf():
