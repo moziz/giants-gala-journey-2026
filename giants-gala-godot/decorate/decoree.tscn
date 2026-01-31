@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://diru48yu1e4a3"]
 
-[ext_resource type="Script" uid="uid://cubeh3m8dergj" path="res://decoree.gd" id="1_ele75"]
+[ext_resource type="Script" uid="uid://cubeh3m8dergj" path="res://decorate/decoree.gd" id="1_ele75"]
 [ext_resource type="PackedScene" uid="uid://dgmpbgpp7k0mk" path="res://assets/head-placeholder-kauhee-ruma.glb" id="2_0bf1i"]
 [ext_resource type="Texture2D" uid="uid://bwwga13y6j1x6" path="res://assets/huulet.png" id="2_5er0a"]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://druykccncta5j"]
 
-[ext_resource type="PackedScene" uid="uid://diru48yu1e4a3" path="res://decoree.tscn" id="1_0f027"]
-[ext_resource type="Script" uid="uid://4rx5la4a3wj7" path="res://decoree_tester.gd" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://diru48yu1e4a3" path="res://decorate/decoree.tscn" id="1_0f027"]
+[ext_resource type="Script" uid="uid://4rx5la4a3wj7" path="res://decorate/decoree_tester.gd" id="2_2c62f"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2c62f"]
 height = 1.0
