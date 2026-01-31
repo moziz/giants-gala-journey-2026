@@ -10,6 +10,7 @@ const ALKU_INTERVALLI := INTERVALLI * 0.7
 static var INTRO :bool= false
 static var LOPUN_ALKU :bool= false
 static var LOPPU :bool= false
+static var NYKY_JATTI_INDKESI :int= 0
 
 var jattilaiset :Array[Node3D]= []
 
@@ -63,6 +64,8 @@ static func get_closest_cammera_target(src: Vector3):
 
 	if closest.x + INTERVALLI + LOPPUMATKA < src.x:
 		LOPPU = true
+
+	NYKY_JATTI_INDKESI = singleton.jattilaiset.find(lahin_jatti)
 
 	lahin_jatti.visible = true
 	if LOPPU and singleton:

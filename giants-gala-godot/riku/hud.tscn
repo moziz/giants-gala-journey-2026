@@ -28,14 +28,62 @@ offset_right = 378.0
 offset_bottom = 85.471954
 script = ExtResource("1_1xegc")
 
-[node name="MalliMaalaus" type="TextureRect" parent="MALLI" unique_id=1112015115]
+[node name="MalliMaalaus1" type="TextureRect" parent="MALLI" unique_id=1112015115]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 1.0
-offset_left = 43.0
+offset_left = 42.0
 offset_top = 136.0
-offset_right = 43.0
-offset_bottom = -371.0
+offset_right = 221.0
+offset_bottom = -110.0
+texture = ExtResource("1_sly5m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MalliMaalaus2" type="TextureRect" parent="MALLI" unique_id=1143436340]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 136.0
+offset_right = 221.0
+offset_bottom = -110.0
+texture = ExtResource("1_sly5m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MalliMaalaus3" type="TextureRect" parent="MALLI" unique_id=54046936]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 136.0
+offset_right = 221.0
+offset_bottom = -110.0
+texture = ExtResource("1_sly5m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MalliMaalaus4" type="TextureRect" parent="MALLI" unique_id=1329574733]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 136.0
+offset_right = 221.0
+offset_bottom = -110.0
+texture = ExtResource("1_sly5m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MalliMaalaus5" type="TextureRect" parent="MALLI" unique_id=1516511384]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 136.0
+offset_right = 221.0
+offset_bottom = -110.0
 texture = ExtResource("1_sly5m")
 expand_mode = 1
 stretch_mode = 6
@@ -118,6 +166,7 @@ grow_vertical = 0
 paint_color = Color(0.1027, 0.79, 0.28598, 1)
 
 [node name="RAAMIT" type="Control" parent="." unique_id=807778476]
+visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 645.0
