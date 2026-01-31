@@ -1,4 +1,11 @@
+class_name Pyssy
 extends Node3D
+
+func maali_valittu(color: Color):
+	pass
+
+func objekti_valittu(objektin_tyyppi_tms: int):
+	pass
 
 var plattrimer: Timer
 

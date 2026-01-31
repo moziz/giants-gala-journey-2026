@@ -1,3 +1,4 @@
+class_name Helikopterimme
 extends RigidBody3D
 
 @onready var propellit: Node = get_node("Runko/Propellit")

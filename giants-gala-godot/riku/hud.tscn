@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://c3ryrvgjw2cgf"]
+
+[ext_resource type="Script" uid="uid://chr337e01mdcf" path="res://riku/intro_text.gd" id="1_etfxu"]
+[ext_resource type="PackedScene" uid="uid://b5vf8miru34in" path="res://riku/hud_tyokalu.tscn" id="2_5h2yi"]
+[ext_resource type="Script" uid="uid://2fg43f6vfenx" path="res://riku/raamit.gd" id="3_sly5m"]
+[ext_resource type="Texture2D" uid="uid://bjupr4ref530x" path="res://assets/paintcan.png" id="4_1xegc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d4nlf"]
+font_size = 32
+
+[node name="HUD" type="Control" unique_id=282879990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GET_READY" type="Label" parent="." unique_id=1406744723]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GET READY!
+1... 2... 3...    "
+label_settings = SubResource("LabelSettings_d4nlf")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_etfxu")
+
+[node name="HUD_Tyokalu" parent="." unique_id=245919087 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.997768, 0, 0.5170993, 1)
+layout_mode = 1
+offset_left = -51.0
+offset_top = -144.0
+offset_right = 149.0
+offset_bottom = -44.0
+grow_vertical = 0
+paint_color = Color(0.997768, 0, 0.5170993, 1)
+
+[node name="HUD_Tyokalu7" parent="." unique_id=439693026 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.29890227, 0.5287669, 1, 1)
+layout_mode = 1
+offset_left = 94.0
+offset_top = -95.0
+offset_right = 294.0
+offset_bottom = 5.0
+grow_vertical = 0
+paint_color = Color(0.29890227, 0.5287669, 1, 1)
+
+[node name="HUD_Tyokalu5" parent="." unique_id=1359503904 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.31, 0.293725, 0.2449, 1)
+layout_mode = 1
+offset_left = 990.0
+offset_top = -153.0
+offset_right = 1190.0
+offset_bottom = -53.0
+grow_vertical = 0
+paint_color = Color(0.31, 0.293725, 0.2449, 1)
+
+[node name="HUD_Tyokalu2" parent="." unique_id=1895421303 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.95, 0.660725, 0.1235, 1)
+layout_mode = 1
+offset_left = 280.0
+offset_top = -65.0
+offset_right = 480.0
+offset_bottom = 35.0
+grow_vertical = 0
+paint_color = Color(0.95, 0.660725, 0.1235, 1)
+
+[node name="HUD_Tyokalu4" parent="." unique_id=1694625808 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.34310004, 0.73, 0.5816884, 1)
+layout_mode = 1
+offset_left = 837.0
+offset_right = 1037.0
+grow_vertical = 0
+paint_color = Color(0.34310004, 0.73, 0.5816884, 1)
+
+[node name="HUD_Tyokalu3" parent="." unique_id=1240604228 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.89, 0.11569999, 0.11569999, 1)
+layout_mode = 1
+offset_left = 663.0
+offset_top = -63.0
+offset_right = 863.0
+offset_bottom = 37.0
+grow_vertical = 0
+paint_color = Color(0.89, 0.11569999, 0.11569999, 1)
+
+[node name="HUD_Tyokalu6" parent="." unique_id=1364233612 instance=ExtResource("2_5h2yi")]
+self_modulate = Color(0.1027, 0.79, 0.28598, 1)
+layout_mode = 1
+offset_left = 471.0
+offset_top = -55.0
+offset_right = 671.0
+offset_bottom = 45.0
+grow_vertical = 0
+paint_color = Color(0.1027, 0.79, 0.28598, 1)
+
+[node name="RAAMIT" type="Control" parent="." unique_id=807778476]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 645.0
+script = ExtResource("3_sly5m")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RAAMIT" unique_id=1649743592]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 645.0
+texture = ExtResource("4_1xegc")
+patch_margin_left = 200
+patch_margin_top = 133
+patch_margin_right = 200
+patch_margin_bottom = 254
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 1

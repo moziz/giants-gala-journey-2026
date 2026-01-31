@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
-[ext_resource type="Script" uid="uid://chr337e01mdcf" path="res://riku/intro_text.gd" id="4_kgac2"]
 [ext_resource type="PackedScene" uid="uid://dpaclehuceyi6" path="res://tomi/helikopterimme.tscn" id="5_v4pft"]
+[ext_resource type="PackedScene" uid="uid://c3ryrvgjw2cgf" path="res://riku/hud.tscn" id="8_v4pft"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
 panorama = ExtResource("2_40id6")
@@ -23,9 +23,6 @@ sky_custom_fov = 72.7
 ambient_light_source = 2
 ambient_light_color = Color(0.6117647, 0.7019608, 0.47058824, 1)
 reflected_light_source = 1
-
-[sub_resource type="LabelSettings" id="LabelSettings_d4nlf"]
-font_size = 32
 
 [node name="Riku" type="Node3D" unique_id=2056958564]
 
@@ -62,15 +59,4 @@ visible = false
 light_color = Color(0.7366933, 0.76, 0.6992, 1)
 light_energy = 0.8
 
-[node name="Label" type="Label" parent="Maailma" unique_id=1624997967]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "GET READY!
-1... 2... 3...    "
-label_settings = SubResource("LabelSettings_d4nlf")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("4_kgac2")
+[node name="HUD" parent="." unique_id=282879990 instance=ExtResource("8_v4pft")]
