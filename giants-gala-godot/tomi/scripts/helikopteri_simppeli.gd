@@ -1,4 +1,4 @@
-extends Node3D
+class_name KopterimmeSimppeli extends Node3D
 
 @onready var propellit: Node = get_node("Runko/Propellit")
 @onready var infotext: Label3D = get_node("infotext")

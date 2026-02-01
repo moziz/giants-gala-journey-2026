@@ -24,7 +24,7 @@ static var obu_paletit := [
 	[null, null, preload("res://riku/koristeet/pitsi2.tscn"), preload("res://riku/koristeet/kaulus.tscn"), preload("res://riku/koristeet/ketju.tscn")],
 ]
 
-var kopterit :Array[Helikopterimme]= []
+var kopterit :Array[KopterimmeSimppeli]= []
 @export var tool_index :int= 0
 
 func _ready():
@@ -34,7 +34,7 @@ func _ready():
 	var objektit = obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	maalisisus.self_modulate = paint_colors[tool_index]
 	for child in pelaajien_ymparisto.get_children():
-		if child is not Helikopterimme:
+		if child is not KopterimmeSimppeli:
 			continue
 		kopterit.push_back(child)
 

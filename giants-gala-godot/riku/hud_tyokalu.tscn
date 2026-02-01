@@ -15,7 +15,6 @@ offset_right = 200.0
 offset_bottom = 2.0
 grow_vertical = 0
 script = ExtResource("1_58sex")
-tool_index = null
 
 [node name="Maalisisus" type="TextureRect" parent="." unique_id=441704309]
 self_modulate = Color(0.13333334, 0.74509805, 0.8352941, 1)
