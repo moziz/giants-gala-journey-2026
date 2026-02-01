@@ -7,6 +7,9 @@ class_name KopterimmeSimppeli extends Node3D
 @export var my_camera_name: StringName = &"Camera3D"
 @export var controls_text: String = "Movement: JL, IK, YH"
 
+const DEFAULT_Y := 0.0
+const DEFAULT_X := 0.0
+
 var my_camera: Camera3D
 var show_info = false
 
@@ -88,6 +91,9 @@ func _process(delta):
 	if Input.is_action_just_pressed(player_code + "_shoot"):
 		var pyssy: Pyssy = $Pyssy
 		pyssy.ampuloi()
+
+	rotation.x = ((DEFAULT_Y - position.y) * -0.05)
+	rotation.y = ((DEFAULT_X - position.x) * 0.05)
 	
 func _find_node_by_name(root: Node, name: StringName) -> Node3D:
 	if root.name == name and root is Node3D:
