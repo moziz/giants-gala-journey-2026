@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://test_paint_sphere"]
+
+[ext_resource type="Script" path="res://decorate/paintable_surface.gd" id="1_paint"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_test"]
+radius = 5.0
+height = 10.0
+radial_segments = 32
+rings = 16
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_visible"]
+albedo_color = Color(0.8, 0.6, 0.4, 1)
+
+[node name="TestPaintSphere" type="Node3D"]
+
+[node name="PaintableSurface" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_paint")
+paint_resolution = Vector2i(512, 512)
+
+[node name="SphereMesh" type="MeshInstance3D" parent="PaintableSurface"]
+mesh = SubResource("SphereMesh_test")
+surface_material_override/0 = SubResource("StandardMaterial3D_visible")

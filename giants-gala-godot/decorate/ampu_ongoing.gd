@@ -1,6 +1,6 @@
 class_name AmpuOngoing extends Node
 
-const speed: float = 22
+const speed: float = 120  # Even faster projectiles (was 80)
 
 var time_start: float
 var duration: float
@@ -28,9 +28,14 @@ func _init(
 	
 	if payload.payload_type == AmpuPayload.PayloadType.DECAL || payload.payload_type == AmpuPayload.PayloadType.PAINT:
 		visu = MeshInstance3D.new()
-		visu.mesh = SphereMesh.new()
+		var sphere = SphereMesh.new()
+		sphere.radius = payload.size * 0.5  # Use payload size (half for radius)
+		sphere.height = payload.size
+		visu.mesh = sphere
 		var material = StandardMaterial3D.new()
 		material.albedo_color = payload.paint
+		material.emission_enabled = true
+		material.emission = payload.paint
 		visu.mesh.surface_set_material(0, material)
 	elif payload.payload_type == AmpuPayload.PayloadType.MESH:
 		visu = payload.mesh

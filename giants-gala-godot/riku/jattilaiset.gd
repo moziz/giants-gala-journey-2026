@@ -20,13 +20,30 @@ func _ready():
 	LOPUN_ALKU = false
 	LOPPU = false
 	singleton = self
+	
+	# Create skin-toned material for giants (pinkish skin tone)
+	var skin_material = StandardMaterial3D.new()
+	skin_material.albedo_color = Color(0.95, 0.72, 0.70, 1.0)  # Pinkish skin tone
+	skin_material.roughness = 0.8  # Matte skin look
+	skin_material.metallic = 0.0
+	
 	for i in range(5):
 		var jatti :Node3D= YKSI_JATTILAINEN.instantiate()
 		self.add_child(jatti)
 		jatti.position.x = ALKUMATKA + ALKU_INTERVALLI + i * INTERVALLI
 		jattilaiset.push_back(jatti)
+		# Apply skin material to all meshes
+		_apply_material_recursive(jatti, skin_material)
 		#jatti.visible = false
 	current_jatti = jattilaiset.front()
+
+
+func _apply_material_recursive(node: Node, material: Material):
+	## Apply material to all MeshInstance3D nodes recursively
+	if node is MeshInstance3D:
+		node.material_override = material
+	for child in node.get_children():
+		_apply_material_recursive(child, material)
 
 static func get_closest_cammera_target_pos(src: Vector3):
 	if LOPPU:

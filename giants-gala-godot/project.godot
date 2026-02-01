@@ -232,4 +232,5 @@ p4_shoot={
 
 [rendering]
 
+limits/cluster_builder/max_clustered_elements=2048
 rendering_device/driver.windows="d3d12"
