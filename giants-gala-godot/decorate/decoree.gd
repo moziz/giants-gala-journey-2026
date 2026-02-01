@@ -14,8 +14,8 @@ static var jatti_index :int= 0
 var ongoings: Array[AmpuOngoing] = [];
 
 func _ready():
-	jatti_index = (jatti_index + 1) % JATTI_GRAFFAT.size()
 	add_child(JATTI_GRAFFAT[jatti_index].instantiate())
+	jatti_index = (jatti_index + 1) % JATTI_GRAFFAT.size()
 	add_child(raycast)
 
 func amputulloo(from_global: Vector3, dir_global: Vector3, payload: AmpuPayload):

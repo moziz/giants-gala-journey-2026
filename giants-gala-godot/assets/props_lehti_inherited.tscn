@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c8dcijyncdckh"]
+
+[ext_resource type="PackedScene" uid="uid://bvpxtpbvtlbt6" path="res://assets/props_lehti.glb" id="1_jjlrn"]
+
+[node name="props_lehti" unique_id=324206636 instance=ExtResource("1_jjlrn")]
