@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://c0ouf3vsd8lym" path="res://riku/liukuhihna.gd" id="2_d4nlf"]
 [ext_resource type="Script" uid="uid://ckk7evday757n" path="res://riku/jattilaiset.gd" id="2_kgac2"]
 [ext_resource type="Script" uid="uid://c0dgpu084x0w1" path="res://riku/salami_valo.gd" id="3_7nowf"]
-[ext_resource type="PackedScene" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
-[ext_resource type="Script" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
-[ext_resource type="PackedScene" path="res://riku/hud.tscn" id="8_v4pft"]
+[ext_resource type="PackedScene" uid="uid://22oy4cjo5o88" path="res://riku/helikopterimme_simple_1.tscn" id="5_3tpsg"]
+[ext_resource type="Script" uid="uid://dxgx6xo316bba" path="res://tomi/scripts/pelaaja~aktivaattori.gd" id="6_pu45m"]
+[ext_resource type="PackedScene" uid="uid://c3ryrvgjw2cgf" path="res://riku/hud.tscn" id="8_v4pft"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v4pft"]
 panorama = ExtResource("2_40id6")
@@ -41,20 +41,20 @@ spot_range = 100.0
 script = ExtResource("3_7nowf")
 
 [node name="Helikopterimme_1" parent="Maailma/PelaajienYmparisto" unique_id=572561793 instance=ExtResource("5_3tpsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4167728, -1.9053618, -5.4089084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4167728, 0.89369, -5.4089084)
 controls_text = "Movement: AD, WS, Z-Space"
 
 [node name="Helikopterimme_2" parent="Maailma/PelaajienYmparisto" unique_id=1741275353 instance=ExtResource("5_3tpsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1775341, -1.9053618, -5.4089084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4708881, -2.7933373, -5.4089084)
 player_code = "p2"
 
 [node name="Helikopterimme_3" parent="Maailma/PelaajienYmparisto" unique_id=201572042 instance=ExtResource("5_3tpsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4284801, -1.9053618, -5.4089084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5712013, 0.5269171, -5.4089084)
 controls_text = "Press 3 to kill me"
 player_code = "p3"
 
 [node name="Helikopterimme_4" parent="Maailma/PelaajienYmparisto" unique_id=1260064074 instance=ExtResource("5_3tpsg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2430382, -1.9053618, -5.4089084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.381962, -2.870553, -5.4089084)
 controls_text = "Pleas, press 4 and kill me"
 player_code = "p4"
 
