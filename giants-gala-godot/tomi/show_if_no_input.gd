@@ -9,7 +9,7 @@ var fade_in_delay_time: float = 3
 var fade_in_duration: float = 1
 
 var fading_out = false
-var fading_in = false
+var fading_in = true
 
 var start_a: float = 0
 
