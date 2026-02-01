@@ -43,6 +43,9 @@ func ampuloi():
 	payload.paint = valittu_color
 	if valittu_type == AmpuPayload.PayloadType.MESH:
 		payload.mesh = valittu_scene.instantiate()
+		var bodies: Array[Node] = payload.mesh.find_children("*", "StaticBody3D")
+		for body in bodies:
+			body.set_collision_layer_value(1, false)
 		if payload.mesh is Varjaa:
 			payload.mesh.varjaa(valittu_color)
 	if payload.payload_type == AmpuPayload.PayloadType.DECAL:

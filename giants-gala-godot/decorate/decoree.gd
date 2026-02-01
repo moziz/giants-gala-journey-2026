@@ -68,3 +68,7 @@ func messhaa(hit_pos: Vector3, hit_normal: Vector3, node: Node3D):
 	node.reparent(self)
 	node.position = hit_pos
 	node.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)
+	
+	var bodies: Array[Node] = node.find_children("*", "StaticBody3D")
+	for body in bodies:
+		body.set_collision_layer_value(1, true)
