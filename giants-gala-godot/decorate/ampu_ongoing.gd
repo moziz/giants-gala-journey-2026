@@ -26,7 +26,7 @@ func _init(
 	target_pos_local = _target_pos_local
 	target_normal_local = _target_normal_local
 	
-	if payload.payload_type == AmpuPayload.PayloadType.DECAL || payload.payload_type == AmpuPayload.PayloadType.PAINT:
+	if payload.payload_type == AmpuPayload.PayloadType.DECAL:
 		visu = MeshInstance3D.new()
 		visu.mesh = SphereMesh.new()
 		var material = StandardMaterial3D.new()

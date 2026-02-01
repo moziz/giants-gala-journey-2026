@@ -2,7 +2,6 @@ class_name AmpuPayload extends Object
 
 enum PayloadType {
 	DECAL,
-	PAINT,
 	MESH
 }
 
