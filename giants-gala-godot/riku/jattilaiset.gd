@@ -98,8 +98,8 @@ func _process(delta):
 	var i :int= 0
 	var target :Vector3
 	target.x = jattilaiset.size() * -0.5 * interval
-	target.z = -50
-	target.y = 20
+	target.z = -60
+	target.y = 10
 	var l := 1 - pow(0.2, delta)
 	var jattilaiset_2 = jattilaiset.slice(0)
 	var eka = jattilaiset_2[0]

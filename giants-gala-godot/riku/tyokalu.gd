@@ -25,10 +25,10 @@ static var vari_paletit := [
 ]
 static var obu_paletit := [
 	[preload("res://riku/koristeet/pitsi.tscn"), preload("res://riku/koristeet/pitsi.tscn"), null, null, null ],
-	[null, null, preload("res://riku/koristeet/pilvi.tscn"), preload("res://riku/koristeet/kukka.tscn"), preload("res://riku/koristeet/lehti.tscn") ],
-	[null, preload("res://riku/koristeet/viikset.tscn"), preload("res://riku/koristeet/pitsi3.tscn"), null, null ],
+	[null, null, preload("res://riku/koristeet/pitsi.tscn"), preload("res://riku/koristeet/kukka.tscn"), preload("res://riku/koristeet/lehti.tscn") ],
+	[null, preload("res://riku/koristeet/viikset.tscn"), preload("res://riku/koristeet/pitsi.tscn"), null, null ],
 	[preload("res://riku/koristeet/kukka.tscn"), preload("res://riku/koristeet/pilvi.tscn"), preload("res://riku/koristeet/ketju.tscn"), null, null ],
-	[null, null, preload("res://riku/koristeet/pitsi2.tscn"), preload("res://riku/koristeet/kaulus.tscn"), preload("res://riku/koristeet/ketju.tscn")],
+	[null, null, preload("res://riku/koristeet/pitsi.tscn"), preload("res://riku/koristeet/kaulus.tscn"), preload("res://riku/koristeet/ketju.tscn")],
 ]
 
 var kopterit :Array[KopterimmeSimppeli]= []

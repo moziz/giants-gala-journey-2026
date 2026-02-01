@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://clitxoj2cadfy" path="res://assets/giant_3.glb" id="1_swjve"]
 
 [node name="JattiGraffat3" type="Node3D" unique_id=943069541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0013504, 2.1705532, 0)
 
 [node name="giant_3" parent="." unique_id=1948967939 instance=ExtResource("1_swjve")]
 transform = Transform3D(-9.9, 0, -1.4948583e-06, 0, 9.9, 0, 1.4948583e-06, 0, -9.9, 0, -45.87, 0)

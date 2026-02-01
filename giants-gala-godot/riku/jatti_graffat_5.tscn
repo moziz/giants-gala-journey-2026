@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bae2yjkkj2u80" path="res://assets/giantt_5.glb" id="1_wvc8s"]
 
 [node name="JattiGraffat5" type="Node3D" unique_id=943069541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2243204, 1.4417219, 1.2173786)
 
 [node name="giantt_5" parent="." unique_id=1276617349 instance=ExtResource("1_wvc8s")]
-transform = Transform3D(-5.37, 0, -4.694603e-07, 0, 5.37, 0, 4.694603e-07, 0, -5.37, 0, -24.795, 0)
+transform = Transform3D(-5.37, 0, -4.694603e-07, 0, 5.37, 0, 4.694603e-07, 0, -5.37, -3.3026638, -30.976826, 8.46595)

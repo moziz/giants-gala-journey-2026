@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c1q0u637fos31"
-path="res://.godot/imported/giant_4.glb-9c1835cf16476b48a2ee389e25a9ebf4.scn"
+uid="uid://cue78fs8elfxo"
+path="res://.godot/imported/props_ketju.glb-0668c566a7bfa3259953de887a4ce819.scn"
 
 [deps]
 
-source_file="res://assets/giant_4.glb"
-dest_files=["res://.godot/imported/giant_4.glb-9c1835cf16476b48a2ee389e25a9ebf4.scn"]
+source_file="res://assets/props_ketju.glb"
+dest_files=["res://.godot/imported/props_ketju.glb-0668c566a7bfa3259953de887a4ce819.scn"]
 
 [params]
 
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "nodes": {
-"PATH:Sphere_005": {
+"PATH:Circle_001": {
 "generate/physics": true,
 "physics/shape_type": 2
 }
