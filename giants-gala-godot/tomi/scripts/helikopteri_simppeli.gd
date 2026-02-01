@@ -78,13 +78,16 @@ func _process(delta):
 			prev_propel_speed = 0.2
 	propellit.set_speeds(prev_propel_speed)
 
-		
 	if Input.is_action_just_pressed(player_code + "_show_info_toggle"):
 		show_info = not show_info
 	if show_info:
 		infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nAutofloat F: %.2f " % [position.x, position.y, position.z]
 	else:
 		infotext.text = ""
+		
+	if Input.is_action_just_pressed(player_code + "_shoot"):
+		var pyssy: Pyssy = $Pyssy
+		pyssy.ampuloi()
 	
 func _find_node_by_name(root: Node, name: StringName) -> Node3D:
 	if root.name == name and root is Node3D:
