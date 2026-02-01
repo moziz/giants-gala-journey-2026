@@ -9,5 +9,5 @@ func _process(delta):
 		fov = lerpf(fov, 35, l)
 		return
 	var t :float= Jattilaiset.get_closest_cammera_target_pos(Vector3.ZERO).length() / 100.0
-	fov = lerpf(100, 30, t)
+	fov = lerpf(100, 30, clamp(t, 0, 1))
 		

@@ -65,18 +65,22 @@ albedo_color = Color(1, 0, 0, 0.47843137)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8uodv"]
 material = SubResource("StandardMaterial3D_36uks")
+top_radius = 0.1
+bottom_radius = 3.0
 
 [node name="Helikopterimme_1" type="Node3D" unique_id=572561793]
 script = ExtResource("1_gvper")
 
 [node name="infotext" type="Label3D" parent="." unique_id=795679052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0)
+visible = false
 font_size = 100
 horizontal_alignment = 0
 vertical_alignment = 0
 
 [node name="controlText" type="Label3D" parent="." unique_id=1603785392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
 font_size = 100
 script = ExtResource("2_36uks")
 
@@ -184,6 +188,6 @@ transform = Transform3D(-0.335, 0, -5.0583594e-08, 0, 0.335, 0, 5.0583594e-08, 0
 [node name="Pyssy" parent="." unique_id=1484461140 instance=ExtResource("6_ejq27")]
 
 [node name="laser_pointteri" type="MeshInstance3D" parent="." unique_id=737320963]
-transform = Transform3D(0.1, 0, 0, 0, -4.371139e-06, -0.1, 0, 100, -4.371139e-09, 0, 0, -102)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-06, -1, 0, 100, -4.371139e-08, 0, 0, -102)
 mesh = SubResource("CylinderMesh_8uodv")
 script = ExtResource("8_8uodv")

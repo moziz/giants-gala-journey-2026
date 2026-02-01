@@ -19,17 +19,25 @@ var plattrimer: Timer
 var valittu_scene: PackedScene
 var valittu_color: Color
 var valittu_type: AmpuPayload.PayloadType
+var ei_valintaa: bool = true
+
+func valinnan_poisto():
+	ei_valintaa = true
 
 func maali_valittu(color: Color):
+	ei_valintaa = false
 	valittu_type = AmpuPayload.PayloadType.DECAL
 	valittu_color = color
 
 func objekti_valittu(objekti_scene: PackedScene, color: Color):
+	ei_valintaa = false
 	valittu_type = AmpuPayload.PayloadType.MESH
 	valittu_scene = objekti_scene
 	valittu_color = color
 	
 func ampuloi():
+	if ei_valintaa:
+		return
 	var payload = AmpuPayload.new()
 	payload.payload_type = valittu_type
 	payload.paint = valittu_color

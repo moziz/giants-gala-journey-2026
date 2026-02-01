@@ -33,6 +33,7 @@ reflected_light_source = 1
 script = ExtResource("1_nf0wm")
 
 [node name="Camera3D" type="Camera3D" parent="Maailma/PelaajienYmparisto" unique_id=1778856546]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8837934)
 environment = SubResource("Environment_kgac2")
 script = ExtResource("2_7nowf")
 

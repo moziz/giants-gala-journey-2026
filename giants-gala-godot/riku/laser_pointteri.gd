@@ -1,9 +1,12 @@
 extends MeshInstance3D
 
 @onready var pyssy = $"../Pyssy"
-@onready var mat :StandardMaterial3D= StandardMaterial3D.new()
+
+func _ready():
+	mesh = mesh.duplicate(true)
 
 func _process(delta):
-	mat.albedo_color = pyssy.current_color
-	mat.albedo_color.a = 0.5
-	mesh.surface_set_material(0, mat)
+	visible = !pyssy.ei_valintaa
+	var col :Color= pyssy.valittu_color
+	col.a = 0.5
+	mesh.surface_get_material(0).albedo_color = col
