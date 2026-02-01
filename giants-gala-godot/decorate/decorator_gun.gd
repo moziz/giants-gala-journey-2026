@@ -6,40 +6,42 @@ extends Node3D
 
 var plattrimer: Timer
 
-var prepPayload: AmpuPayload
+#func _ready() -> void:
+#	plattrimer = Timer.new()
+#	add_child(plattrimer)
+#	plattrimer.wait_time = 0.5
+#	plattrimer.timeout.connect(func():
+#		ampuloi()
+#		plattrimer.start()
+#	);
+#	plattrimer.start()
 
-func _ready() -> void:
-	plattrimer = Timer.new()
-	add_child(plattrimer)
-	plattrimer.wait_time = 0.5
-	plattrimer.timeout.connect(func():
-		ampuloi()
-		plattrimer.start()
-	);
-	plattrimer.start()
+var valittu_scene: PackedScene
+var valittu_color: Color
+var valittu_type: AmpuPayload.PayloadType
 
 func maali_valittu(color: Color):
-	prepPayload = AmpuPayload.new()
-	prepPayload.payload_type = AmpuPayload.PayloadType.DECAL
-	prepPayload.image = decal_textures[randi_range(0, decal_textures.size() - 1)]
-	prepPayload.paint = color
-	pass
+	valittu_type = AmpuPayload.PayloadType.DECAL
+	valittu_color = color
 
 func objekti_valittu(objekti_scene: PackedScene, color: Color):
-	prepPayload = AmpuPayload.new()
-	prepPayload.payload_type = AmpuPayload.PayloadType.MESH
-	prepPayload.paint = color
-	prepPayload.mesh = objekti_scene.instantiate()
-	if prepPayload.mesh is Varjaa:
-		prepPayload.mesh.varjaa(color)
-	pass
+	valittu_type = AmpuPayload.PayloadType.MESH
+	valittu_scene = objekti_scene
+	valittu_color = color
 	
 func ampuloi():
-	if !prepPayload:
-		return
+	var payload = AmpuPayload.new()
+	payload.payload_type = valittu_type
+	payload.paint = valittu_color
+	if valittu_type == AmpuPayload.PayloadType.MESH:
+		payload.mesh = valittu_scene.instantiate()
+		if payload.mesh is Varjaa:
+			payload.mesh.varjaa(valittu_color)
+	if payload.payload_type == AmpuPayload.PayloadType.DECAL:
+		payload.image = decal_textures[randi_range(0, decal_textures.size() - 1)]
 	
 	var decoree :Decoree= Jattilaiset.current_jatti.find_child("Decoree")
 	var from = global_position
 	var dir = global_basis * Vector3.FORWARD
 	
-	decoree.amputulloo(from, dir, prepPayload)
+	decoree.amputulloo(from, dir, payload)

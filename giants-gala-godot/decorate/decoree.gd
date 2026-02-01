@@ -57,8 +57,7 @@ func _process(delta: float) -> void:
 
 func blottaa(hit_pos: Vector3, hit_normal: Vector3, decaltex: Texture2D, color: Color):
 	var decal = Decal.new()
-	if not find_child(decal.name):
-		add_child(decal)
+	add_child(decal)
 	decal.size = Vector3(3, 3, 3)
 	decal.texture_albedo = decaltex
 	decal.modulate = color
@@ -66,7 +65,6 @@ func blottaa(hit_pos: Vector3, hit_normal: Vector3, decaltex: Texture2D, color: 
 	decal.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)
 
 func messhaa(hit_pos: Vector3, hit_normal: Vector3, node: Node3D):
-	if not find_child(node.name):
-		add_child(node)
+	node.reparent(self)
 	node.position = hit_pos
 	node.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)

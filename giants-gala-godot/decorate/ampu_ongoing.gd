@@ -37,7 +37,10 @@ func _init(
 	else:
 		push_error("payload type not implemtenedcdlfkrjlkjsdfljkljklkjljkljk")
 	visu.position = original_pos_local
-	host.add_child(visu);
+	if visu.get_parent():
+		visu.reparent(host, true)
+	else:
+		host.add_child(visu);
 	
 	time_start = Time.get_ticks_msec() / 1000.
 	duration = (target_pos_local - original_pos_local).length() / speed
