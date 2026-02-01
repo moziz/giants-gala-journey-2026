@@ -45,7 +45,7 @@ func amputulloo(from_global: Vector3, dir_global: Vector3, payload: AmpuPayload)
 
 func _process(delta: float) -> void:
 	if !ongoings.is_empty():
-		for i in range(ongoings.size() - 1, 0, -1):
+		for i in range(ongoings.size() - 1, -1, -1):
 			var ongoing = ongoings[i]
 			ongoing.tick()
 			if ongoing.finished:
