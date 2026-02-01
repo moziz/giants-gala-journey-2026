@@ -1,6 +1,6 @@
 class_name AmpuOngoing extends Node
 
-const speed: float = 22
+const speed: float = 120
 
 var time_start: float
 var duration: float
