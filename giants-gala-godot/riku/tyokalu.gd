@@ -3,6 +3,12 @@ extends Control
 @onready var pelaajien_ymparisto = $"../../Maailma/PelaajienYmparisto"
 @onready var maalisisus = $Maalisisus
 @onready var maalikehys = $Kehys
+@onready var visu_container = $tool_scene_container
+@onready var visu_root = $tool_scene_container/tool_scene_viewport
+@onready var visu_camera_root = $tool_scene_container/tool_scene_viewport/camera_root
+var visu_node: Node3D = null
+var setup_jatti_index = -1
+var prev_giant_index := 0
 
 enum ToolType {
 	PAINT,
@@ -37,8 +43,8 @@ func _ready():
 		if child is not KopterimmeSimppeli:
 			continue
 		kopterit.push_back(child)
+	visu_root.world_3d = World3D.new()
 
-var prev_giant_index := 0
 func _process(delta):
 	if prev_giant_index != Jattilaiset.NYKY_JATTI_INDKESI:
 		prev_giant_index = Jattilaiset.NYKY_JATTI_INDKESI
@@ -58,6 +64,19 @@ func _process(delta):
 
 	if Jattilaiset.LOPUN_ALKU:
 		return
+		
+	if setup_jatti_index != Jattilaiset.NYKY_JATTI_INDKESI:
+		# Setup 3D previews for this Jätti
+		setup_jatti_index = Jattilaiset.NYKY_JATTI_INDKESI
+		if visu_node:
+			visu_node.queue_free()
+		var objekti_resource: PackedScene = objektit[tool_index]
+		if objekti_resource:
+			visu_container.show()
+			visu_node = objekti_resource.instantiate()
+			visu_root.add_child(visu_node)
+		else:
+			visu_container.hide()
 
 	var paint_color := Color.WHITE
 	if tool_index < paint_colors.size():
@@ -78,3 +97,5 @@ func _process(delta):
 				pyssy.maali_valittu(paint_color)
 			else:
 				pyssy.objekti_valittu(objekti, paint_color)
+	
+	visu_camera_root.rotate(Vector3.UP, PI * delta)
