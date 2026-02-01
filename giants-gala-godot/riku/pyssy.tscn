@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b275stsxqcesk"]
 
 [ext_resource type="Script" uid="uid://dq0qxql1pvjds" path="res://decorate/decorator_gun.gd" id="1_3841w"]
-[ext_resource type="Texture2D" uid="uid://bwwga13y6j1x6" path="res://assets/huulet.png" id="2_a5mjd"]
+[ext_resource type="Texture2D" uid="uid://blanm2mvdxpbr" path="res://assets/decal_0.png" id="2_rtfmc"]
+[ext_resource type="Texture2D" uid="uid://bggv50fom3cmn" path="res://assets/decal_1.png" id="3_hxt5c"]
+[ext_resource type="Texture2D" uid="uid://chbtmmd7jlt08" path="res://assets/decal_2.png" id="4_22glw"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_a5mjd"]
 
 [node name="Pyssy" type="Node3D" unique_id=1484461140]
 script = ExtResource("1_3841w")
-test_decal_texture = ExtResource("2_a5mjd")
+decal_textures = Array[Texture2D]([ExtResource("2_rtfmc"), ExtResource("3_hxt5c"), ExtResource("4_22glw")])
 test_mesh = SubResource("PrismMesh_a5mjd")

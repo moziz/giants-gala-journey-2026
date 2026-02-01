@@ -41,20 +41,19 @@ func _process(delta: float) -> void:
 				if ongoing.payload.payload_type == AmpuPayload.PayloadType.MESH:
 					messhaa(ongoing.target_pos_local, ongoing.target_normal_local, ongoing.payload.mesh)
 				elif ongoing.payload.payload_type == AmpuPayload.PayloadType.DECAL:
-					blottaa(ongoing.target_pos_local, ongoing.target_normal_local, ongoing.payload.image)
+					blottaa(ongoing.target_pos_local, ongoing.target_normal_local, ongoing.payload.image, ongoing.payload.paint)
 				ongoings.remove_at(i)
 
-func blottaa(hit_pos: Vector3, hit_normal: Vector3, decaltex: Texture2D):
+func blottaa(hit_pos: Vector3, hit_normal: Vector3, decaltex: Texture2D, color: Color):
 	var decal = Decal.new()
 	add_child(decal)
 	decal.size = Vector3(3, 3, 3)
 	decal.texture_albedo = decaltex
+	decal.modulate = color
 	decal.position = hit_pos
 	decal.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)
 
-func messhaa(hit_pos: Vector3, hit_normal: Vector3, mesh: Mesh):
-	var mesh_node = MeshInstance3D.new()
-	mesh_node.mesh = mesh
-	add_child(mesh_node)
-	mesh_node.position = hit_pos
-	mesh_node.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)
+func messhaa(hit_pos: Vector3, hit_normal: Vector3, node: Node3D):
+	add_child(node)
+	node.position = hit_pos
+	node.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)

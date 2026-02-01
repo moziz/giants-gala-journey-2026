@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c1bjwti44laib"]
+
+[ext_resource type="Texture2D" uid="uid://chbtmmd7jlt08" path="res://assets/decal_2.png" id="1_erw7h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7o300"]
+
+[node name="Node3D" type="Node3D" unique_id=1978450816]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1893647086]
+mesh = SubResource("BoxMesh_7o300")
+
+[node name="Decal" type="Decal" parent="." unique_id=893706451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86462504, 0, 0)
+texture_albedo = ExtResource("1_erw7h")
+modulate = Color(1, 0, 0, 1)
