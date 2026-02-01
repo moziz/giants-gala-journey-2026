@@ -1,10 +1,21 @@
 class_name Decoree extends Node3D
 
-@onready var raycast = RayCast3D.new()
+const JATTI_GRAFFAT :Array[PackedScene]= [
+	preload("res://riku/jatti_graffat_1.tscn"),
+	preload("res://riku/jatti_graffat_2.tscn"),
+	preload("res://riku/jatti_graffat_2.tscn"),
+	preload("res://riku/jatti_graffat_1.tscn"),
+	preload("res://riku/jatti_graffat_2.tscn"),
+]
+
+@onready var raycast := RayCast3D.new()
+static var jatti_index :int= 0
 
 var ongoings: Array[AmpuOngoing] = [];
 
 func _ready():
+	jatti_index = (jatti_index + 1) % JATTI_GRAFFAT.size()
+	add_child(JATTI_GRAFFAT[jatti_index].instantiate())
 	add_child(raycast)
 
 func amputulloo(from_global: Vector3, dir_global: Vector3, payload: AmpuPayload):
