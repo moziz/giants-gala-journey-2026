@@ -64,7 +64,7 @@ player_code = "p4"
 script = ExtResource("6_pu45m")
 
 [node name="Liukuhihna" type="Node3D" parent="Maailma" unique_id=123787549]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.6698446, -21.165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.575, -30.39)
 script = ExtResource("2_d4nlf")
 
 [node name="Jattilaiset" type="Node3D" parent="Maailma/Liukuhihna" unique_id=1790405881]

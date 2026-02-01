@@ -5,4 +5,4 @@
 [node name="JattiGraffat2" type="Node3D" unique_id=943069541]
 
 [node name="giant_2" parent="." unique_id=520123873 instance=ExtResource("1_hw21h")]
-transform = Transform3D(-9.115, 0, -7.968586e-07, 0, 9.115, 0, 7.968586e-07, 0, -9.115, 0, -41.82, 0)
+transform = Transform3D(-7.795, 0, -1.1770123e-06, 0, 7.795, 0, 1.1770123e-06, 0, -7.795, 0, -40.13593, 0)

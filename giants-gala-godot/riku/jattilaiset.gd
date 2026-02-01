@@ -5,7 +5,7 @@ static var singleton : Jattilaiset
 const YKSI_JATTILAINEN = preload("res://riku/yksi_jattilainen.tscn")
 const ALKUMATKA := 30.0
 const LOPPUMATKA := 5.0
-const INTERVALLI := 280.0  # etäisyys intervalli, ei aika
+const INTERVALLI := 100.0  # etäisyys intervalli, ei aika
 const ALKU_INTERVALLI := INTERVALLI * 0.7
 
 # game states
@@ -101,7 +101,11 @@ func _process(delta):
 	target.z = -50
 	target.y = 20
 	var l := 1 - pow(0.2, delta)
-	for jatti :Node3D in jattilaiset:
+	var jattilaiset_2 = jattilaiset.slice(0)
+	var eka = jattilaiset_2[0]
+	jattilaiset_2[0] = jattilaiset_2[1]
+	jattilaiset_2[1] = eka
+	for jatti :Node3D in jattilaiset_2:
 		jatti.position.x = lerpf(jatti.position.x, target.x + i * interval, l)
 		jatti.position.z = lerpf(jatti.position.z, target.z + (i%2) * front, l)
 		jatti.position.y = lerpf(jatti.position.y, target.y + (i%2) * down, l)

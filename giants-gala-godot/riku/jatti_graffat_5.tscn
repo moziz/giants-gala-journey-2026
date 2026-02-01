@@ -4,5 +4,5 @@
 
 [node name="JattiGraffat5" type="Node3D" unique_id=943069541]
 
-[node name="giantt_5" parent="." unique_id=1243589455 instance=ExtResource("1_wvc8s")]
-transform = Transform3D(-4.895, 0, -4.2793448e-07, 0, 4.895, 0, 4.2793448e-07, 0, -4.895, 0, -22.98, 0)
+[node name="giantt_5" parent="." unique_id=1276617349 instance=ExtResource("1_wvc8s")]
+transform = Transform3D(-5.37, 0, -4.694603e-07, 0, 5.37, 0, 4.694603e-07, 0, -5.37, 0, -24.795, 0)

@@ -16,7 +16,7 @@ func _process(delta):
 			speed = 20
 		else:
 			distance = (kamera.global_position - lähin_jätti.global_position).length()
-			if distance > 100:
+			if distance > 100 and Jattilaiset.countdown <= 0.0:
 				speed = 10
 			else:
 				# slow down when hit distance
