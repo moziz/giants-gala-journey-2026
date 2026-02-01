@@ -38,8 +38,17 @@ func _ready():
 			continue
 		kopterit.push_back(child)
 
-
+var prev_giant_index := 0
 func _process(delta):
+	if prev_giant_index != Jattilaiset.NYKY_JATTI_INDKESI:
+		prev_giant_index = Jattilaiset.NYKY_JATTI_INDKESI
+		for kopteri in kopterit:
+			var pyssy :Pyssy= kopteri.find_child("Pyssy")
+			if !pyssy:
+				push_error("Kopterilla ei oo Pyssy lasta")
+				continue
+			pyssy.valinnan_poisto()
+		
 	var paint_colors = vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	var objektit = obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	if Jattilaiset.end_countdown > 1:

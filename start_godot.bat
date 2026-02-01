@@ -1,0 +1,1 @@
+..\Godot_v4.6-stable_win64.exe giants-gala-godot\project.godot
