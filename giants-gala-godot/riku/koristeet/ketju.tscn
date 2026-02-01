@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://dxt0j3mfwt05t"]
 
-[node name="Ketju" type="Node3D" unique_id=1066732835]
+[ext_resource type="Script" uid="uid://diortiqmgwa0r" path="res://riku/koristeet/varjaa.gd" id="1_2cad5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_kpe7n"]
+
+[node name="Ketju" type="Node3D" unique_id=1066732835 node_paths=PackedStringArray("varjattavat_lapset")]
+script = ExtResource("1_2cad5")
+varjattavat_lapset = [NodePath("MeshInstance3D")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2133336924]
+mesh = SubResource("PrismMesh_kpe7n")

@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://dg54e56m78gd2"]
 
-[node name="Pitsi" type="Node3D" unique_id=794759881]
+[ext_resource type="Script" uid="uid://diortiqmgwa0r" path="res://riku/koristeet/varjaa.gd" id="1_i3j60"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dia5g"]
+
+[node name="Pitsi" type="Node3D" unique_id=794759881 node_paths=PackedStringArray("varjattavat_lapset")]
+script = ExtResource("1_i3j60")
+varjattavat_lapset = [NodePath("MeshInstance3D")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1851692039]
+mesh = SubResource("QuadMesh_dia5g")

@@ -30,6 +30,8 @@ func objekti_valittu(objekti_scene: PackedScene, color: Color):
 	prepPayload.payload_type = AmpuPayload.PayloadType.MESH
 	prepPayload.paint = color
 	prepPayload.mesh = objekti_scene.instantiate()
+	if prepPayload.mesh is Varjaa:
+		prepPayload.mesh.varjaa(color)
 	pass
 	
 func ampuloi():

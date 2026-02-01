@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://bieckmxedxnk5"]
 
-[node name="Pilvi" type="Node3D" unique_id=521932568]
+[ext_resource type="Script" uid="uid://diortiqmgwa0r" path="res://riku/koristeet/varjaa.gd" id="1_bfw8i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wuji1"]
+
+[node name="Pilvi" type="Node3D" unique_id=521932568 node_paths=PackedStringArray("varjattavat_lapset")]
+script = ExtResource("1_bfw8i")
+varjattavat_lapset = [NodePath("MeshInstance3D")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=881297511]
+layers = 5
+mesh = SubResource("SphereMesh_wuji1")

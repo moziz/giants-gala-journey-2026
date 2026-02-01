@@ -30,8 +30,8 @@ var kopterit :Array[Helikopterimme]= []
 func _ready():
 	if Engine.is_editor_hint():
 		return
-	var paint_colors :Array[Color]= vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
-	var objektit :Array[PackedScene]= obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var paint_colors = vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var objektit = obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	maalisisus.self_modulate = paint_colors.front()
 	for child in pelaajien_ymparisto.get_children():
 		if child is not Helikopterimme:
@@ -40,8 +40,8 @@ func _ready():
 
 
 func _process(delta):
-	var paint_colors :Array[Color]= vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
-	var objektit :Array[PackedScene]= obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var paint_colors = vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var objektit = obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	if Jattilaiset.end_countdown > 1:
 		var l := 1 - pow(0.001, delta)
 		modulate.a = lerpf(modulate.a, 0, l)
