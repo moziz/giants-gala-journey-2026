@@ -29,6 +29,9 @@ func _init(
 	if payload.payload_type == AmpuPayload.PayloadType.DECAL || payload.payload_type == AmpuPayload.PayloadType.PAINT:
 		visu = MeshInstance3D.new()
 		visu.mesh = SphereMesh.new()
+		var material = StandardMaterial3D.new()
+		material.albedo_color = payload.paint
+		visu.mesh.surface_set_material(0, material)
 	elif payload.payload_type == AmpuPayload.PayloadType.MESH:
 		visu = payload.mesh
 	else:
