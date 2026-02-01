@@ -10,14 +10,28 @@ enum ToolType {
 	OBJECT
 }
 
-@export var paint_colors :Array[Color]= []
-@export var objektit :Array[PackedScene]= []
+static var vari_paletit := [
+	[Color("22bed5"), Color("c6d7c8"), Color("c6d7c8"), Color("22bed5"), Color("eab5ad")],
+	[Color("f26f19"), Color("fdffde"), Color("52190a"), Color("e74a4a"), Color("8aab26")],
+	[Color("52190a"), Color("52190a"), Color("ffba00"), Color("22bed5"), Color("e74a4a")],
+	[Color("e74a4a"), Color("52190a"), Color("fdffde"), Color("ffba00"), Color("0a0914")],
+	[Color("ffba00"), Color("fdffde"), Color("fdffde"), Color("fdffde"), Color("ffba00")],
+]
+static var obu_paletit := [
+	[preload("res://riku/koristeet/pitsi.tscn"), preload("res://riku/koristeet/pitsi.tscn"), null, null, null ],
+	[null, null, preload("res://riku/koristeet/pilvi.tscn"), preload("res://riku/koristeet/kukka.tscn"), preload("res://riku/koristeet/lehti.tscn") ],
+	[null, preload("res://riku/koristeet/viikset.tscn"), preload("res://riku/koristeet/pitsi3.tscn"), null, null ],
+	[preload("res://riku/koristeet/kukka.tscn"), preload("res://riku/koristeet/pilvi.tscn"), preload("res://riku/koristeet/ketju.tscn"), null, null ],
+	[null, null, preload("res://riku/koristeet/pitsi2.tscn"), preload("res://riku/koristeet/kaulus.tscn"), preload("res://riku/koristeet/ketju.tscn")],
+]
 
 var kopterit :Array[Helikopterimme]= []
 
 func _ready():
 	if Engine.is_editor_hint():
 		return
+	var paint_colors :Array[Color]= vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var objektit :Array[PackedScene]= obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	maalisisus.self_modulate = paint_colors.front()
 	for child in pelaajien_ymparisto.get_children():
 		if child is not Helikopterimme:
@@ -26,12 +40,8 @@ func _ready():
 
 
 func _process(delta):
-	if Engine.is_editor_hint():
-		var maalisisus = $Maalisisus
-		if maalisisus and paint_colors.size() > 0:
-			maalisisus.self_modulate = paint_colors.front()
-		return
-
+	var paint_colors :Array[Color]= vari_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
+	var objektit :Array[PackedScene]= obu_paletit[Jattilaiset.NYKY_JATTI_INDKESI]
 	if Jattilaiset.end_countdown > 1:
 		var l := 1 - pow(0.001, delta)
 		modulate.a = lerpf(modulate.a, 0, l)
@@ -47,7 +57,7 @@ func _process(delta):
 	var objekti :PackedScene= null
 	if Jattilaiset.NYKY_JATTI_INDKESI < objektit.size():
 		objekti = objektit[Jattilaiset.NYKY_JATTI_INDKESI]
-		
+
 	for kopteri in kopterit:
 		var screen_pos :Vector2= get_viewport().get_camera_3d().unproject_position(kopteri.global_position)
 		if get_rect().has_point(screen_pos):
