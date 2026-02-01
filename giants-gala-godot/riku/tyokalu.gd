@@ -16,7 +16,7 @@ enum ToolType {
 }
 
 static var vari_paletit := [
-	[Color("22bed5"), Color("c6d7c8"), Color("c6d7c8"), Color("22bed5"), Color("eab5ad")],
+	[Color("22bed5"), Color("c6d7c8"), Color("22bed5"), Color("c6d7c8"), Color("eab5ad")],
 	[Color("f26f19"), Color("fdffde"), Color("52190a"), Color("e74a4a"), Color("8aab26")],
 	[Color("52190a"), Color("52190a"), Color("ffba00"), Color("22bed5"), Color("e74a4a")],
 	[Color("e74a4a"), Color("52190a"), Color("fdffde"), Color("ffba00"), Color("0a0914")],
