@@ -62,7 +62,7 @@ func blottaa(hit_pos: Vector3, hit_normal: Vector3, decaltex: Texture2D, color: 
 	decal.texture_albedo = decaltex
 	decal.modulate = color
 	decal.position = hit_pos
-	decal.basis = Basis.looking_at(-hit_normal).rotated(Vector3.LEFT, PI/2)
+	decal.basis = Basis(Vector3(1, 0, 0), PI/2) * Basis.looking_at(-hit_normal)
 
 func messhaa(hit_pos: Vector3, hit_normal: Vector3, node: Node3D):
 	node.reparent(self)

@@ -9,7 +9,20 @@
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1893647086]
 mesh = SubResource("BoxMesh_7o300")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=218082563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2297602, 0, 1.0310435)
+mesh = SubResource("BoxMesh_7o300")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2146901095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2297602, 0, -0.9689565)
+mesh = SubResource("BoxMesh_7o300")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2072736576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2897587, 0, 0.15041947)
+mesh = SubResource("BoxMesh_7o300")
+
 [node name="Decal" type="Decal" parent="." unique_id=893706451]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86462504, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -0.04067239, 0.99917257, 0, -0.99917257, -0.04067239, 1.1201262, 0.10975137, 0.18962379)
+size = Vector3(2.165039, 2, 2)
 texture_albedo = ExtResource("1_erw7h")
 modulate = Color(1, 0, 0, 1)
