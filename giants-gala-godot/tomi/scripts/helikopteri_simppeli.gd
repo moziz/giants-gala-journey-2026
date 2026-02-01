@@ -87,7 +87,7 @@ func _process(delta):
 		infotext.text = "Altitude: %.2f\nAltitude target: %.2f\nLinVelY: %.2f\nAutofloat F: %.2f " % [position.x, position.y, position.z]
 	else:
 		infotext.text = ""
-		
+
 	if Input.is_action_just_pressed(player_code + "_shoot"):
 		var pyssy: Pyssy = $Pyssy
 		pyssy.ampuloi()

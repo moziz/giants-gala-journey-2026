@@ -6,29 +6,46 @@ extends Node3D
 @onready var p3: Node = get_node("../Helikopterimme_3")
 @onready var p4: Node = get_node("../Helikopterimme_4")
 
-var p1_activate: bool = true
-var p2_activate: bool = true
-var p3_activate: bool = true
-var p4_activate: bool = true
+var p1_activate: bool = false
+var p2_activate: bool = false
+var p3_activate: bool = false
+var p4_activate: bool = false
 
-func _process(delta):
-	if Input.is_action_just_pressed("p1_ready_to_play_toggle"):
-		p1_activate = not p1_activate
+
+
+func _ready():
+	aktivoi(1,true)
+	aktivoi(2,false)
+	aktivoi(3,false)
+	aktivoi(4,false)
+	
+func aktivoi(pelaaja: int, val: bool):
+	if pelaaja == 1:
+		p1_activate = val
 		p1.set_process(p1_activate)
 		p1.set_physics_process(p1_activate)
 		p1.visible = p1_activate
-	if Input.is_action_just_pressed("p2_ready_to_play_toggle"):
-		p2_activate = not p2_activate
+	if pelaaja == 2:
+		p2_activate = val
 		p2.set_process(p2_activate)
 		p2.set_physics_process(p2_activate)
 		p2.visible = p2_activate
-	if Input.is_action_just_pressed("p3_ready_to_play_toggle"):
-		p3_activate = not p3_activate
+	if pelaaja == 3:
+		p3_activate = val
 		p3.set_process(p3_activate)
 		p3.set_physics_process(p3_activate)
 		p3.visible = p3_activate
-	if Input.is_action_just_pressed("p4_ready_to_play_toggle"):
-		p4_activate = not p4_activate
+	if pelaaja == 4:
+		p4_activate = val
 		p4.set_process(p4_activate)
 		p4.set_physics_process(p4_activate)
 		p4.visible = p4_activate
+
+func _process(delta):
+	var pelaajat := [p1,p2,p3,p4]
+	for p in pelaajat:
+		var pint :int= int(p.player_code.substr(1,1))
+		if Input.is_action_just_pressed(p.player_code + "_shoot"):
+			aktivoi(pint,true)
+		if Input.is_action_just_pressed(p.player_code + "_ready_to_play_toggle"):
+			aktivoi(pint,!p.visible)
