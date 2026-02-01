@@ -62,8 +62,6 @@ script = ExtResource("1_gvper")
 
 [node name="infotext" type="Label3D" parent="." unique_id=795679052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.05, 0)
-text = "Altitude: 10
-Altitude target: "
 font_size = 100
 horizontal_alignment = 0
 vertical_alignment = 0
