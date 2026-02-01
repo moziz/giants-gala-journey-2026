@@ -42,10 +42,11 @@ script = ExtResource("3_7nowf")
 
 [node name="Helikopterimme_1" parent="Maailma/PelaajienYmparisto" unique_id=572561793 instance=ExtResource("5_3tpsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4167728, 0.89369, -5.4089084)
-controls_text = "Movement: AD, WS, Z-Space"
+controls_text = "Movement: AD, WS, Shoot:E"
 
 [node name="Helikopterimme_2" parent="Maailma/PelaajienYmparisto" unique_id=1741275353 instance=ExtResource("5_3tpsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4708881, -2.7933373, -5.4089084)
+controls_text = "Movement: FH, TG, Shoot:Y"
 player_code = "p2"
 
 [node name="Helikopterimme_3" parent="Maailma/PelaajienYmparisto" unique_id=201572042 instance=ExtResource("5_3tpsg")]
