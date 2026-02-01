@@ -61,3 +61,6 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="tool_scene_container/tool_scene_viewport/camera_root" unique_id=39558861]
 transform = Transform3D(1, 0, 0, 0, 0.9565799, 0.29147026, 0, -0.29147026, 0.9565799, 0, 6.727234, 13.905945)
 fov = 90.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="tool_scene_container/tool_scene_viewport/camera_root" unique_id=1613420294]
+transform = Transform3D(1, 0, 0, 0, 0.65507054, 0.7555677, 0, -0.7555677, 0.65507054, 0, 0, 0)

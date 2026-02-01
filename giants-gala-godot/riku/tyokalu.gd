@@ -9,6 +9,7 @@ extends Control
 var visu_node: Node3D = null
 var setup_jatti_index = -1
 var prev_giant_index := 0
+@onready var directional_light_3d = $tool_scene_container/tool_scene_viewport/camera_root/DirectionalLight3D
 
 enum ToolType {
 	PAINT,
@@ -82,6 +83,7 @@ func _process(delta):
 	if tool_index < paint_colors.size():
 		paint_color = paint_colors[tool_index]
 	maalisisus.self_modulate = paint_color
+	directional_light_3d.light_color = paint_color
 	var objekti :PackedScene= null
 	if tool_index < objektit.size():
 		objekti = objektit[tool_index]
