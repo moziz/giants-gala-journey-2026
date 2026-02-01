@@ -5,11 +5,14 @@ static var singleton : Jattilaiset
 const YKSI_JATTILAINEN = preload("res://riku/yksi_jattilainen.tscn")
 const ALKUMATKA := 30.0
 const LOPPUMATKA := 5.0
-const INTERVALLI := 80.0
+const INTERVALLI := 280.0  # etäisyys intervalli, ei aika
 const ALKU_INTERVALLI := INTERVALLI * 0.7
+
+# game states
 static var INTRO :bool= false
 static var LOPUN_ALKU :bool= false
 static var LOPPU :bool= false
+
 static var NYKY_JATTI_INDKESI :int= 0
 static var YHEN_PROGRESSI :float= 0.0
 
@@ -87,6 +90,7 @@ func _process(delta):
 	current_jatti = get_closest_cammera_target(Vector3.ZERO)
 	if !LOPPU:
 		return
+	# ending stuff
 	end_countdown += delta
 	const interval := 13.0
 	const front := 17.0
