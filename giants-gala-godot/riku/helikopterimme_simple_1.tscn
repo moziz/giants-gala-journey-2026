@@ -69,7 +69,6 @@ vertical_alignment = 0
 
 [node name="controlText" type="Label3D" parent="." unique_id=1603785392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-text = "Movement: WS,AD,Z-Space"
 font_size = 100
 script = ExtResource("2_36uks")
 
