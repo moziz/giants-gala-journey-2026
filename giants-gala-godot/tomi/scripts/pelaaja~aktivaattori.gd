@@ -14,7 +14,7 @@ var p4_activate: bool = false
 
 
 func _ready():
-	aktivoi(1,true)
+	aktivoi(1,false)
 	aktivoi(2,false)
 	aktivoi(3,false)
 	aktivoi(4,false)
