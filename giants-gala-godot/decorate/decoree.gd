@@ -3,9 +3,9 @@ class_name Decoree extends Node3D
 const JATTI_GRAFFAT :Array[PackedScene]= [
 	preload("res://riku/jatti_graffat_1.tscn"),
 	preload("res://riku/jatti_graffat_2.tscn"),
-	preload("res://riku/jatti_graffat_2.tscn"),
-	preload("res://riku/jatti_graffat_1.tscn"),
-	preload("res://riku/jatti_graffat_2.tscn"),
+	preload("res://riku/jatti_graffat_3.tscn"),
+	preload("res://riku/jatti_graffat_4.tscn"),
+	preload("res://riku/jatti_graffat_5.tscn"),
 ]
 
 @onready var raycast := RayCast3D.new()
