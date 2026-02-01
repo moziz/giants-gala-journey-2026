@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://du812kks1y5uh" path="res://assets/paintcan_center.png" id="2_2wkx1"]
 [ext_resource type="Texture2D" uid="uid://bjupr4ref530x" path="res://assets/paintcan.png" id="3_jf5wc"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_58sex"]
-
 [node name="HUD_Tyokalu" type="Control" unique_id=245919087]
 self_modulate = Color(0.82600015, 0.13, 1, 1)
 layout_mode = 3
@@ -63,6 +61,3 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="tool_scene_container/tool_scene_viewport/camera_root" unique_id=39558861]
 transform = Transform3D(1, 0, 0, 0, 0.9565799, 0.29147026, 0, -0.29147026, 0.9565799, 0, 6.727234, 13.905945)
 fov = 90.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="tool_scene_container/tool_scene_viewport" unique_id=41684137]
-mesh = SubResource("BoxMesh_58sex")
