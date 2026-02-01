@@ -55,7 +55,7 @@ player_code = "p3"
 
 [node name="Helikopterimme_4" parent="Maailma/PelaajienYmparisto" unique_id=1260064074 instance=ExtResource("5_3tpsg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.381962, -2.870553, -5.4089084)
-controls_text = "Pleas, press 4 and kill me"
+controls_text = "Pliz, press 4 and kill me"
 player_code = "p4"
 
 [node name="Pelaaja~aktivaattori" type="Node3D" parent="Maailma/PelaajienYmparisto" unique_id=1907495565]
