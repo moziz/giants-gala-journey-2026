@@ -151,7 +151,6 @@ offset_left = 98.0
 offset_top = -129.0
 offset_right = 298.0
 offset_bottom = -29.0
-paint_colors = Array[Color]([Color(0.07000001, 0.135, 0.2, 1), Color(4.316881, 0.0009984132, 3.0831134, 1)])
 
 [node name="HUD_Tyokalu5" parent="." unique_id=1359503904 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.31, 0.293725, 0.2449, 1)
@@ -160,7 +159,6 @@ offset_left = 887.0
 offset_top = -119.0
 offset_right = 1087.0
 offset_bottom = -19.0
-paint_colors = Array[Color]([Color(0.64, 0.0768, 0.12373344, 1)])
 
 [node name="HUD_Tyokalu2" parent="." unique_id=1895421303 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.95, 0.660725, 0.1235, 1)
@@ -169,7 +167,6 @@ offset_left = 292.0
 offset_top = -99.0
 offset_right = 492.0
 offset_bottom = 1.0
-paint_colors = Array[Color]([Color(0.18060002, 0.2471066, 0.43, 1)])
 
 [node name="HUD_Tyokalu4" parent="." unique_id=1694625808 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.34310004, 0.73, 0.5816884, 1)
@@ -178,7 +175,6 @@ offset_left = 691.0
 offset_top = -99.0
 offset_right = 891.0
 offset_bottom = 1.0
-paint_colors = Array[Color]([Color(0.93, 0.75066495, 0.10230001, 1)])
 
 [node name="HUD_Tyokalu3" parent="." unique_id=1240604228 instance=ExtResource("2_5h2yi")]
 self_modulate = Color(0.89, 0.11569999, 0.11569999, 1)
@@ -187,7 +183,6 @@ offset_left = 492.0
 offset_top = -85.0
 offset_right = 692.0
 offset_bottom = 15.0
-paint_colors = Array[Color]([Color(0.60350025, 0.39, 1, 1)])
 
 [node name="RAAMIT" type="Control" parent="." unique_id=807778476]
 visible = false
