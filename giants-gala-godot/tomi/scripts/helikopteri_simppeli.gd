@@ -1,6 +1,7 @@
 class_name KopterimmeSimppeli extends Node3D
 
 @onready var propellit: Node = get_node("Runko/Propellit")
+@onready var runko: Node3D = get_node("Runko")
 @onready var infotext: Label3D = get_node("infotext")
 @onready var control_text: Label3D = get_node("controlText")
 @export var my_camera_name: StringName = &"Camera3D"
@@ -54,6 +55,17 @@ func _process(delta):
 		
 	if forward_force_input != 0:
 		global_position += directions["forward"] * forward_power * delta * forward_force_input
+	
+	# small tilt when moving:
+	runko.rotation_degrees = lerp(
+		runko.rotation_degrees, 
+		Vector3(
+			(forward_force_input + up_force_input) * 45,
+			0,
+			-side_force_input * 15,
+		),
+	 	0.05
+	);
 	
 	var speed = 0.2
 	for v in [up_force_input, side_force_input, forward_force_input]:
